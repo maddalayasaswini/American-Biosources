@@ -1,61 +1,47 @@
-const sections = document.querySelectorAll(".content-block");
-const navLinks = document.querySelectorAll(".nav-pill");
+document.addEventListener("DOMContentLoaded", function(){
 
-/* CLICK EVENT */
+const sections = document.querySelectorAll(".section")
+const navLinks = document.querySelectorAll(".chapter-link")
 
 navLinks.forEach(link => {
 
 link.addEventListener("click", function(e){
 
-e.preventDefault();
+e.preventDefault()
 
-/* remove old active */
-navLinks.forEach(btn => btn.classList.remove("active"));
-
-/* add active to clicked */
-this.classList.add("active");
-
-/* scroll */
-const target = document.querySelector(this.getAttribute("href"));
-
-window.scrollTo({
-top: target.offsetTop - 100,
+document.querySelector(this.getAttribute("href")).scrollIntoView({
 behavior: "smooth"
-});
+})
 
-});
+})
 
-});
+})
 
+const observer = new IntersectionObserver(entries => {
 
-/* SCROLL DETECTION */
+entries.forEach(entry => {
 
-window.addEventListener("scroll", () => {
+if(entry.isIntersecting){
 
-let currentSection = "";
+navLinks.forEach(link=>{
+link.classList.remove("active")
 
-sections.forEach(section => {
-
-const sectionTop = section.offsetTop - 200;
-
-if(pageYOffset >= sectionTop){
-currentSection = section.getAttribute("id");
+if(link.getAttribute("href").substring(1) === entry.target.id){
+link.classList.add("active")
 }
 
-});
-
-if(currentSection){
-
-navLinks.forEach(link => {
-
-link.classList.remove("active");
-
-if(link.getAttribute("href") === "#" + currentSection){
-link.classList.add("active");
-}
-
-});
+})
 
 }
 
-});
+})
+
+},{
+threshold:0.6
+})
+
+sections.forEach(section=>{
+observer.observe(section)
+})
+
+})
