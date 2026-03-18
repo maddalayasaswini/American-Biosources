@@ -19,6 +19,7 @@
 
     <!-- Style sheet -->
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/index.css">
 
     <!-- Slick CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -41,7 +42,7 @@
                 <li class="nav-item"><a href="./about-us.html" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="./products.html" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="./services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="./news.html" class="nav-link">News & Podcast</a></li>
+                <li class="nav-item"><a href="./news-podcast.html" class="nav-link">News & Podcast</a></li>
                 <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li>
                 <li class="nav-item"><a href="./contact-us.html" class="nav-link">Contact Us</a></li>
             </ul>
@@ -89,6 +90,58 @@
         </div>
     </section>
     <!-- About the page Section End -->
+
+    <!-- Services Section Start -->
+    <section class="services-intro">
+        <section class="services">
+            <h3 class="section-title">Our <span class="gradient-text">Services</span></h3>
+
+            <div class="cards">
+                <div class="card" onclick="openPopup(0)">
+                    <h3>Drug Discovery</h3>
+                    <p>Innovative research solutions</p>
+                </div>
+
+                <div class="card" onclick="openPopup(1)">
+                    <h3>Clinical Research</h3>
+                    <p>End-to-end trial management</p>
+                </div>
+
+                <div class="card" onclick="openPopup(2)">
+                    <h3>Manufacturing</h3>
+                    <p>Scalable production solutions</p>
+                </div>
+
+                <div class="card" onclick="openPopup(3)">
+                    <h3>Analytical Testing</h3>
+                    <p>High-quality lab services</p>
+                </div>
+
+                <div class="card" onclick="openPopup(4)">
+                    <h3>Regulatory Consulting</h3>
+                    <p>Compliance & approvals</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- POPUP -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">✖</span>
+
+                <div class="popup-left">
+                    <img id="popup-img" src="">
+                </div>
+
+                <div class="popup-right">
+                    <h2 id="popup-title"></h2>
+                    <p id="popup-desc"></p>
+                    <ul id="popup-points"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
 
     <!-- World Map Section Start -->
     <div class="map">
@@ -162,6 +215,7 @@
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
     <!-- Script Sheet -->
-    <script src="./script/main.js"></script>
+    <script src="./script/main.js" defer></script>
+    <script src="./script/index.js" defer></script>
 </body>
 </html>

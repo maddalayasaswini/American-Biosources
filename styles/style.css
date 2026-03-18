@@ -10,7 +10,7 @@
     /* Colors - Professional American Corporate Palette */
     --nav-background: #ffffff;
     --primary-color-1: #1e3a8a; /* Deep professional blue */
-    --primary-color-1-hover: #1e40af;
+    --primary-color-1-hover: #3b5ed3;
     --primary-color-2: #dc2626; /* Professional red */
     --primary-color-2-hover: #ef4444;
     --accent-color: #0ea5e9; /* Sky blue accent */
@@ -511,33 +511,6 @@ body {
     margin-top: var(--space-6);
 }
 
-
-/* World Map Section - Enhanced */
-.map {
-  position: relative;
-  top: 120px;
-  padding: var(--space-16) 0;
-  background: var(--bg-secondary);
-}
-
-.map-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 var(--space-6);
-}
-
-.map img {
-  width: 100%;
-  height: auto;
-  border-radius: 70px;
-  box-shadow: var(--shadow-large);
-  transition: transform var(--transition-slow);
-}
-
-.map img:hover {
-  transform: scale(1.02);
-}
-
 /* Footer Section - Enhanced */
 .footer {
   position: relative;
@@ -783,8 +756,8 @@ body {
   }
 
   .navbar .logo img {
-    height: 60px;
-    max-width: 250px;
+    height: 130px;
+    max-width: 300px;
   }
 
   .navbar .tagline {
@@ -828,6 +801,8 @@ body {
   .footer-middle,
   .footer-right {
     margin-bottom: var(--space-6);
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-bottom-content {
