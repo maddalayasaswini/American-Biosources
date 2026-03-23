@@ -91,6 +91,47 @@
     </section>
     <!-- About the page Section End -->
 
+    <!-- Product Section Start -->
+    <div class="product-modal" id="productModal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close product details">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i id="modal-icon" class="fas fa-pills"></i>
+                </div>
+                <h2 id="modal-title">Product Category</h2>
+                <p id="modal-description">Product description will appear here</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Product Category Image" loading="lazy" />
+                </div>
+                <div class="modal-info">
+                    <div class="info-section">
+                        <h3 id="modal-heading1">Key Features</h3>
+                        <ul id="modal-points1"></ul>
+                    </div>
+                    <div class="info-section">
+                        <h3 id="modal-heading2">Applications</h3>
+                        <ul id="modal-points2"></ul>
+                    </div>
+                    <div class="modal-cta">
+                        <button class="cta-button">
+                            <span>Contact Our Team</span>
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products Section End -->
+ 
     <!-- Services Section Start -->
     <section class="services-intro">
         <section class="services">

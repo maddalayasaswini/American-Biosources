@@ -1,4 +1,3 @@
-
 const data = [
   {
     title: "Drug Discovery & Research",
