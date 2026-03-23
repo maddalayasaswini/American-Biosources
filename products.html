@@ -17,17 +17,19 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- BOOTSTRAP CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS CDN (if not already included) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Style sheet -->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/products.css">
-    <link rel="stylesheet" href="./styles/service.css">
-
-    <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
+    
 </head>
-<body>
+<body>    
     
     <!-- NavBar Section Start -->
     <nav class="navbar" id="navbar">
@@ -58,221 +60,206 @@
     <!-- NavBar Section End -->
 
     <!-- Banner Container Section Start -->
-    <header class="biopharma-banner" data-bg="./asserts/images/products.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center; ">
+    <header class="biopharma-banner" data-bg="./assets/banners/home.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center;">
         <div class="banner-content">
-            <div class="headline fade-in-up">
+            <div class="headline">
                 <h1>Products</h1>
             </div>
         </div>
-        <!-- Animated Background -->
         <canvas id="dna-animation"></canvas>
     </header>
     <!-- Banner Container Section End -->
- 
-    <!-- About Products Section Start -->
-    <section class="services-intro">
+
+    <!-- About the page Section Start -->
+    <section class="page-intro">
         <div class="container">
-            <div class="intro-content fade-in-up">
+            <div class="intro-content">
                 <h2 class="section-title">Our <span class="gradient-text">Pipeline</span></h2>
-                
                 <p class="intro-description">
-                    Our development pipeline reflects our strategic direction and strong foundation in scientific research, cGMP manufacturing, and regulatory expertise.
-                </p>
-                <p class="intro-description">
-                    We are committed to advancing our programs through clinical development and delivering innovative, high-quality solutions that address critical healthcare needs.
+                    Our pipeline reflects our strategic focus as well as our scientific and novel cGMP manufacturing, regulatory capabilities. We are committed to advancing these candidates through clinical development to deliver new hope to patients.
                 </p>
             </div>
         </div>
     </section>
-    <!-- About Products Section End -->
-
+    <!-- About the page Section End -->
+   
     <!-- Products Section Start -->
-    <section class="products-section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2 class="section-title">Our <span class="gradient-text">Product Categories</span></h2>
-                <!-- <p class="section-subtitle">Click on any category to explore our innovative solutions</p> -->
+    <section class="products-services"> 
+      <div class="container">
+        <div class="image-para">
+            <div class="intro-content">
+                <h2 class="section-title">Our <span class="gradient-text">Pipeline</span></h2>
             </div>
             
-            <div class="products-grid">
-                <div class="product-card slide-in-left" data-category="pharmaceuticals">
-                    <div class="product-animation">
-                        <dotlottie-wc class="product-gif" 
-                            src="https://lottie.host/6d0a7b2b-5e18-4310-8fc5-01987e441989/hMf2imQGAU.lottie"
-                            speed="1" autoplay loop aria-hidden="true">
-                        </dotlottie-wc>
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <h2 class="text-primary-blue text-center fw-bold">Human Vaccines</h2> <br>
+                        <p class="h5">
+                            ABSNovacell Biopharmaceuticals is pioneering the development of human vaccines that utilize <b>NOVACELL Platform</b> for both production and innovation. These vaccines are designed to address serious infectious diseases by leveraging the unique biological properties of egg embryo stem cells, which enable scalable manufacturing, advanced antigen presentation and enhanced immune response. The company’s approach incorporates state-of-the-art R&D and proprietary cell line technologies, focusing on global health threats such as pandemic and seasonal flu, as well as emerging viruses including Biowarfare threat.
+                        </p>
                     </div>
-                    <div class="product-content">
-                        <div class="product-icon">
-                            <i class="fas fa-pills"></i>
+                    <div class="col-md-6 order-1 order-md-2 text-center">
+                        <div class="position-relative d-inline-block" style="height: 350px; width: 100%;">
+                            <img src="./assets/images/services/1.jpg" 
+                                class="img-fluid rounded w-100 h-100" 
+                                alt="Example Image" 
+                                style="object-fit: cover;">
+                            <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                                style="opacity: 0.4; border-radius: 0.375rem;">
+                            </div>
                         </div>
-                        <h3>Pharmaceuticals</h3>
-                        <p>Advanced pharmaceutical formulations targeting critical therapeutic areas</p>
-                        <button class="product-button" aria-label="Learn more about Pharmaceuticals">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card slide-in-left" data-category="vaccines">
-                    <div class="product-animation">
-                        <dotlottie-wc class="product-gif" 
-                            src="https://lottie.host/88777050-b258-4342-a145-14aa3e431b57/RZOYDBNXX8.lottie"
-                            speed="1" autoplay loop aria-hidden="true">
-                        </dotlottie-wc>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-icon">
-                            <i class="fas fa-syringe"></i>
-                        </div>
-                        <h3>Vaccines</h3>
-                        <p>Next-generation vaccines for infectious disease prevention and treatment</p>
-                        <button class="product-button" aria-label="Learn more about Vaccines">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card slide-in-left" data-category="biologics">
-                    <div class="product-animation">
-                        <dotlottie-wc class="product-gif" 
-                            src="https://lottie.host/f725f945-2605-4f24-a528-e9c1b3a407a7/pMtui2PpBN.lottie"
-                            speed="1" autoplay loop aria-hidden="true">
-                        </dotlottie-wc>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-icon">
-                            <i class="fas fa-dna"></i>
-                        </div>
-                        <h3>Biologics</h3>
-                        <p>Innovative biological therapies including monoclonal antibodies and proteins</p>
-                        <button class="product-button" aria-label="Learn more about Biologics">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card slide-in-right" data-category="biosimilars">
-                    <div class="product-animation">
-                        <dotlottie-wc class="product-gif" 
-                            src="https://lottie.host/c30a5454-e3b4-4e63-ba3a-d3c7ff9016d7/Cca6IhIMRm.lottie"
-                            speed="1" autoplay loop aria-hidden="true">
-                        </dotlottie-wc>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <h3>Biosimilars</h3>
-                        <p>High-quality biosimilar products providing accessible treatment options</p>
-                        <button class="product-button" aria-label="Learn more about Biosimilars">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-card slide-in-right" data-category="genomics">
-                    <div class="product-animation">
-                        <dotlottie-wc class="product-gif" 
-                            src="https://lottie.host/57f2941a-2987-4128-af08-e5aa447815bf/m96ZrnCx1G.lottie"
-                            speed="1" autoplay loop aria-hidden="true">
-                        </dotlottie-wc>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Genomic Diagnostics</h3>
-                        <p>Precision diagnostic tools for personalized medicine and targeted therapy</p>
-                        <button class="product-button" aria-label="Learn more about Genomic Diagnostics">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
                     </div>
                 </div>
             </div>
+
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-1 order-md-2 text-center">
+                        <div class="position-relative d-inline-block" style=" height: 350px;">
+                            <img src="./assets/images/services/1.jpg" 
+                                class="img-fluid rounded w-100 h-100" 
+                                alt="Example Image" 
+                                style="object-fit: cover;">
+                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                                style="opacity: 0.4; border-radius: 0.375rem;">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-2 order-md-2">
+                        <h2 class="text-primary-blue text-center fw-bold">Veterinary Vaccines & Products</h2> <br>
+                        <p class="h5">
+                            ABSNovacell Biopharmaceuticals develops veterinary vaccines that serve the needs of major livestock and companion animals, including cattle, horses, birds, fish and household pets. These vaccines are produced using advanced biotechnological platforms such as mammalian, yeast, E. coli and insect cells, ensuring high standards of potency, safety and regulatory compliance. The company's focus on research innovation enables rapid response to emerging diseases like swine flu and bird flu, as well as the development of vaccines for seasonal threats and other critical pathogens. We also develop specialty pharmaceuticals for dogs, cats, horses and cattle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <h2 class="text-primary-blue text-center fw-bold mt-4">Biologics & Biosimilars</h2> <br>
+                        <p class="h5">
+                            We are developing novel monoclonal antibodies, therapeutic protines  and high-fidelity biosimilars. Our work includes cell line development, process optimization and analytical characterization. These efforts aim to provide targeted, effective treatment options and increase market competition to improve access and affordability.
+                        </p>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2 text-center">
+                        <div class="position-relative d-inline-block" style=" height: 350px;">
+                            <img src="./assets/images/services/1.jpg" 
+                                class="img-fluid rounded w-100 h-100" 
+                                alt="Example Image" 
+                                style="object-fit: cover;">
+                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                                style="opacity: 0.6; border-radius: 0.375rem;">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-1 order-md-2 text-center">
+                        <div class="position-relative d-inline-block" style="height: 350px;">
+                            <img src="./assets/images/services/1.jpg" 
+                                class="img-fluid rounded w-100 h-100" 
+                                alt="Example Image" 
+                                style="object-fit: cover;">
+                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                                style="opacity: 0.7; border-radius: 0.375rem;">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-2 order-md-2">
+                        <h2 class="text-primary-blue text-center fw-bold mt-4">Cell & Gene Therapy</h2> <br>
+                        <p class="h5">
+                            We are pioneering advanced therapies, including next-generation AAV vectors for gene delivery and editing. Our capabilities include vector design, editing, process science and manufacturing for complex modalities. These innovations aim to unlock one-time, potentially curative treatments for patients with limited options.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <h2 class="text-primary-blue text-center fw-bold mt-4">Stem Cells</h2> <br>
+                        <p class="h5">
+                            Stem cells are unique biological cells with the ability to self-renew and differentiate into various specialized cell types, making them essential for applications in regenerative medicine and biotechnology. In vaccine development and therapeutics, animal stem cells serve as versatile platforms that enable large-scale production of vaccines and biologics with enhanced immune response properties. They provide a sustainable and scalable source for generating cells and proteins required for immunization, thereby supporting more efficient and rapid vaccine development.
+                        </p>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2 text-center">
+                        <div class="position-relative d-inline-block" style="height: 350px;">
+                            <img src="./assets/images/services/1.jpg" 
+                                class="img-fluid rounded w-100 h-100" 
+                                alt="Example Image" 
+                                style="object-fit: cover;">
+                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                                style="opacity: 0.7; border-radius: 0.375rem;">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-1 order-md-1 text-center">
+                        <div class="position-relative d-inline-block" style="height: 350px;">
+                            <img src="./assets/images/services/1.jpg" 
+                                class="img-fluid rounded w-100 h-100" 
+                                alt="Example Image" 
+                                style="object-fit: cover;">
+                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                                style="opacity: 0.7; border-radius: 0.375rem;"></div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-2 order-md-2">
+                        <h2 class="text-primary-blue text-center fw-bold">Genomic Diagnotics</h2> <br>
+                        <p class="h5">
+                            Diagnostic kits are specialized medical tools designed to detect, diagnose and monitor diseases and health conditions by analyzing biological samples such as blood, urine, saliva, or swabs. These kits contain reagents and instructions to facilitate accurate testing, enabling healthcare providers to confirm disease presence, predict disease risk and guide treatment decisions. Diagnostic kits serve various purposes including identifying infectious agents, genetic abnormalities and biomarkers related to chronic diseases. The rise of at-home diagnostic kits has empowered individuals to conveniently perform health tests with rapid results, improving access to timely medical insights.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="row align-items-center">
+                <div class="col-md-6 order-1 order-md-2 text-center">
+                    <div class="position-relative d-inline-block" style="height: 350px;">
+                    <img src="./assets/images/services/1.jpg" 
+                        class="img-fluid rounded w-100 h-100" 
+                        alt="Example Image" 
+                        style="object-fit: cover;">
+                        <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" 
+                        style="opacity: 0.6; border-radius: 0.375rem;"></div> -->
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <h2 class="text-primary-blue text-center fw-bold mt-4">Speciality Generics</h2> <br>
+                    <p class="h5">
+                        We provide a cost-effective alternative by making essential medications more accessible without compromising on quality, efficacy or safety. Generic drugs undergo rigorous regulatory scrutiny to ensure that they meet the same standards as branded medicines, including bioequivalence in absorption and action. 
+                        Their availability promotes competition, reduces healthcare costs and increases treatment options for patients worldwide. Through generics, healthcare systems can allocate resources more efficiently, enabling wider access to vital therapies while maintaining high standards of patient care.
+                    </p>
+                </div>
+                </div>
+            </div>
+
         </div>
+      </div>
     </section>
     <!-- Products Section End -->
-
-    <!-- Product Details Modal -->
-    <div class="product-modal" id="productModal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-overlay" onclick="closeModal()"></div>
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()" aria-label="Close product details">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="modal-header">
-                <div class="modal-icon">
-                    <i id="modal-icon" class="fas fa-pills"></i>
-                </div>
-                <h2 id="modal-title">Product Category</h2>
-                <p id="modal-description">Product description will appear here</p>
-            </div>
-
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img id="modal-img" src="" alt="Product Category Image" loading="lazy" />
-                </div>
-                <div class="modal-info">
-                    <div class="info-section">
-                        <h3 id="modal-heading1">Key Features</h3>
-                        <ul id="modal-points1"></ul>
-                    </div>
-                    <div class="info-section">
-                        <h3 id="modal-heading2">Applications</h3>
-                        <ul id="modal-points2"></ul>
-                    </div>
-                    <div class="modal-cta">
-                        <button class="cta-button">
-                            <span>Contact Our Team</span>
-                            <i class="fas fa-envelope"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Innovation Section Start -->
-    <section class="services-intro">
-        <div class="container">
-            <div class="intro-content fade-in-up">
-                <h2 class="section-title">Innovation <span class="gradient-text">Pipeline</span></h2>
-                
-                <p class="intro-description">
-                    <b>Research & Development</b> - State-of-the-art R&D facilities driving breakthrough discoveries in biopharmaceutical science.
-                </p>
-                <p class="intro-description">
-                    <b>Manufacturing Excellence</b> - Advanced manufacturing capabilities ensuring highest quality standards and regulatory compliance.
-                </p>
-                <p class="intro-description">
-                    <b>Quality Assurance</b> - Rigorous quality control processes maintaining the highest safety and efficacy standards.
-                </p>
-                <p class="intro-description">
-                    <b>Global Distribution</b> - Worldwide distribution network ensuring timely access to life-saving treatments.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- Innovation Section End -->
 
     <!-- Footer Section Start -->
     <footer class="footer">
         <div class="footer-top">
-            <div class="footer-left fade-in-up">
+            <div class="footer-left">
                 <h2 class="brand">American Biosources Inc.</h2>
                 <p>Leading the future of biopharmaceutical innovation with cutting-edge research and development. 
                 Our commitment to excellence drives us to deliver quality healthcare solutions that improve lives worldwide.
                 </p>
             </div>
 
-            <div class="footer-middle fade-in-up">
+            <div class="footer-middle">
                 <h4>CONTACT US</h4>
                 <p><i class="fas fa-map-marker-alt"></i> 80 Main Street, 5th Floor, West <br> Orange, New Jersey 07052</p>
                 <p><i class="fas fa-envelope"></i> info@ambioinc.com</p>
@@ -280,7 +267,7 @@
                 <p><i class="fas fa-phone"></i> +1-484-544-2673</p>
             </div>
 
-            <div class="footer-right fade-in-up">
+            <div class="footer-right">
                 <h4>FOLLOW US</h4>
                 <div class="socials">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -316,12 +303,8 @@
         <i class="fas fa-chevron-up"></i>
     </button>
     
-    <!-- Banner Slider Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-
     <!-- Script Sheet -->
     <script src="./script/main.js"></script>
+    
 </body>
 </html>
