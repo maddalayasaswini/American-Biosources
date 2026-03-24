@@ -1,1260 +1,1558 @@
-/*------------------------------------------------
-
-CSS STRUCTURE:
-
-1. VARIABLES
-
-2. GENERAL TYPOGRAPHY
-  2.1 General Styles
-  2.2 Text Color & Weight
-  2.3 Background Color
-  2.4 Border Radius
-  2.5 Section
-    - Section Paddings
-    - Section Margins
-    - Section Title
-    - Content width
-  2.6 Buttons
-    - Button Sizes
-    - Button Shapes
-    - Button Color Scheme
-    - Button Aligns
-
-3. CONTENT ELEMENTS
-  - Dropdown
-  - Svg Color
-  - Search Bar
-
-4. SITE STRUCTURE
-  4.1 Header
-  4.2 Intro
-  4.3 Best Services Section
-  4.4 Book Appointment Section
-  4.5 Testimonial Section
-  4.6 Our Team Section
-  4.7 Faqs Section
-  4.8 Tabs- Department Section
-  4.9 Blog Section
-  4.10 Brand Section
-  4.11 Subscribe Section
-  4.12 Footer
-  4.13 Careers Page
-
-    
-/*--------------------------------------------------------------
-/** 1. VARIABLES
---------------------------------------------------------------*/
-
-:root {
-    --primary-color-1: #B31942;
-    --primary-color-2-hover: #0f4a93;
-    --footer-color: #0F172A;
-    --footer-heading-color: #fff;
-    --footer-content-color: #b3bac4;
-    --footer-bottom-color: #1E293B;
-    --copyright-background: #fff;
-
-    --accent-color: #333;
-    --black-color: #000;
-    --dark-color: #4C5354;
-    --primary-color: #0A3161;
-    --secondary-color : #ea2c42;
-    --primary-color-200: #e8f1ec;
-    --primary-color-400: #e8f1ed;
-    --gray-color: #ccd7da;
-    --bs-gray-300: #DCDCDC;
-    --bs-light-rgb: rgba(255, 255, 255, 1);
-    --bs-primary-rgb: rgb(33, 63, 97);
-    --light-color: #fff;
-    --swiper-theme-color: #111 !important;
-    --cadet-blue-color: #4c83c2;
-    --cadet-gray-color: #bac2c4;
-    
-    --gradient-color : linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
-}
-
-.gradient-text {
-    background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
-/* on mobile devices below 600px
- */
-@media screen and (max-width: 600px) {
-  :root {
-    --header-height: 100px;
-    --header-height-min: 80px;
-  }
-}
-
-/* Fonts */
-:root {
-  --body-font: "PT Serif", serif;
-  --heading-font: "Open Sans", sans-serif;
-}
-
-/*----------------------------------------------*/
-/* 2 GENERAL TYPOGRAPHY */
-/*----------------------------------------------*/
-
-/* 2.1 General Styles
-/*----------------------------------------------*/
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--body-font);
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--accent-color);
-  margin: 0;
-}
-
-ul.inner-list li,
-ul>li {
-  color: var(--dark-gray-color);
-}
-
-a {
-  color: var(--dark-color);
-  text-decoration: none;
-  transition: 0.3s color ease-out;
-}
-
-a:hover {
-  color: var(--primary-color);
-}
-
-a.light {
-  color: var(--light-color);
-}
-
-a:hover.light {
-  color: var(--light-color);
-}
-
-p {
-  color: var(--accent-color);
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-.highlight {
-  background: var(--primary-color);
-  color: var(--light-color);
-}
-
-.focus-transparent:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
-}
-
-/* 2.2 Text Color & Weight
-/*----------------------------------------------*/
-.text-primary {
-  color: var(--light-color) !important;
-}
-.text-secondary {
-  color: var(--secondary-color);
-}
-.text-primary-blue{
-  color: var(--primary-color) ;
-}
-.text-primary-500 {
-  color: var(--cadet-gray-color) !important;
-}
-
-.text-primary-500:hover {
-  color: var(--light-color) !important;
-}
-.text-para{
-  color: var(--gray-color);
-}
-.text-dark {
-  color: var(--dark-color) !important;
-}
-
-.text-light {
-  color: var(--light-color) !important;
-}
-
-.text-gray {
-  color: var(--gray-color) !important;
-}
-
-.text-cadet-blue {
-  color: var(--cadet-blue-color) !important;
-}
-
-.fw-semibold {
-  font-weight: 600;
-}
-
-.fw-medium {
-  font-weight: 500;
-}
-
-.subheading {
-  font-size: 1.5rem;   /* slightly smaller than name */
-}
-
-/* 2.3 Background Color
-/*----------------------------------------------*/
-.bg-light {
-  background-color: var(--light-color) !important;
-}
-
-.bg-primary {
-  background-color: var(--primary-color) !important;
-}
-
-.bg-primary-200 {
-  background-color: var(--primary-color-200) !important;
-}
-
-.bg-primary-dim {
-  background-color: var(--bs-primary-rgb) !important;
-}
-
-.gradient-bg {
-  background: linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
-  padding: 40px 0;
-}
-
-/* 2.4 Border Radius
-/*----------------------------------------------*/
-.border-circle {
-  border-radius: 50% !important;
-}
-
-.border-radius-10 {
-  border-radius: 10px !important;
-}
-
-.border-radius-20 {
-  border-radius: 20px !important;
-}
-
-.border-radius-30 {
-  border-radius: 30px !important;
-}
-
-.border-radius-35 {
-  border-radius: 35px !important;
-}
-
-.border-radius-top-10 {
-  border-top-left-radius: 10px !important;
-  border-top-right-radius: 10px !important;
-}
-
-.border-right {
-  border-right: 1px solid var(--bs-gray-300);
-}
-
-/*--------------------------------------------------------------
-/** 2.5 Section
---------------------------------------------------------------*/
-/* - Section Padding
---------------------------------------------------------------*/
-.padding-small {
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-
-.padding-medium {
-  padding-top: 4em;
-  padding-bottom: 4em;
-}
-
-.padding-large {
-  padding-top: 7em;
-  padding-bottom: 7em;
-}
-
-/* - Section Margin
---------------------------------------------------------------*/
-.margin-small {
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-
-.margin-medium {
-  margin-top: 5em;
-  margin-bottom: 5em;
-}
-
-.margin-large {
-  margin-top: 7em;
-  margin-bottom: 7em;
-}
-
-@media only screen and (max-width: 768px) {
-
-  .margin-small,
-  .margin-medium,
-  .margin-large {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-}
-
-/* - Section Title
---------------------------------------------------------------*/
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--heading-font);
-  font-weight: 500;
-  line-height: 1;
-}
-
-h1.light,
-h2.light,
-h3.light,
-h4.light,
-h5.light {
-  color: var(--secondary-color);
-}
-
-/* - Section width
---------------------------------------------------------------*/
-.u-full-width {
-  width: 100%;
-  border: none;
-}
-
-.container-md {
-  max-width: 1465px;
-}
-
-.container-lg {
-  max-width: 1750px;
-}
-
-/*--------------------------------------------------------------
-/** 2.6 Buttons
---------------------------------------------------------------*/
-/* - Button Sizes
-------------------------------------------------------------- */
-.btn.btn-small {
-  padding: 0.8em 1.8em;
-  font-size: 0.65em;
-}
-
-.btn.btn-medium {
-  padding: 0.7em 1em;
-  font-size: 1em;
-}
-
-.btn.btn-large {
-  padding: 0.8em 4.6em;
-  font-size: 1.4em;
-}
-
-/* - Button Shapes
-------------------------------------------------------------- */
-.btn.btn-rounded,
-.btn.btn-rounded::after {
-  border-radius: 6px;
-}
-
-.btn.btn-pill,
-.btn.btn-pill::after {
-  border-radius: 2em;
-}
-
-.btn.btn-outline-dark:hover::after,
-.btn.btn-outline-light:hover::after {
-  background-color: transparent;
-}
-
-.btn.btn-outline-dark {
-  border-color: rgba(0, 0, 0, 1);
-  color: var(--dark-color);
-}
-
-.btn.btn-outline-dark:hover {
-  background: var(--dark-color);
-  color: var(--light-color);
-}
-
-.btn.btn-outline-light {
-  border-color: rgba(255, 255, 255, 1);
-  color: var(--light-color);
-}
-
-.btn.btn-outline-gray {
-  background: transparent;
-  border-color: var(--gray-color-200);
-  color: var(--dark-color);
-}
-
-.btn.btn-outline-gray:hover {
-  color: var(--light-color) !important;
-}
-
-.btn.btn-full {
-  display: block;
-  margin: .85em 0;
-  width: 100%;
-  letter-spacing: 0.12em;
-}
-
-/* no border radius */
-.btn-rounded-none,
-.btn-rounded-none::after {
-  border-radius: 0;
-}
-
-/* - Buttons Color Scheme
-------------------------------------------------------------- */
-.btn.btn-normal {
-  text-decoration: none;
-  border: none;
-  font-weight: 600;
-}
-
-.btn.btn-normal:hover,
-.btn.btn-normal:focus {
-  box-shadow: none;
-}
-
-.btn.btn-accent {
-  color: var(--light-color);
-  background-color: var(--accent-color);
-  border: none;
-}
-
-.btn.btn-accent:hover {
-  color: var(--light-color) !important;
-  background-color: var(--primary-color);
-}
-
-.btn.btn-black {
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  border: none;
-}
-
-.btn.btn-black:hover {
-  color: var(--light-color);
-}
-
-.btn.btn-light {
-  background-color: var(--light-color);
-  color: var(--dark-color);
-  border: none;
-}
-
-.btn.btn-light:hover {
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-.btn.btn-primary {
-  background : linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
-  color: var(--light-color);
-  border: none;
-}
-
-.btn.btn-primary:hover {
-  background: var(--primary-color-400);
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-.btn.btn-banner {
-  background-color: var(--light-color);
-  color: var(--primary-color);
-  border: none;
-}
-
-.btn.btn-banner:hover {
-  background : linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
-  color: var(--light-color);
-  border: none;
-}
-
-
-/* - Buttons Aligns
-------------------------------------------------------------- */
-.btn-left {
-  text-align: left;
-  display: block;
-}
-
-.btn-center {
-  text-align: center;
-  display: block;
-}
-
-.btn-right {
-  text-align: right;
-  display: block;
-}
-
-/*--------------------------------------------------------------
-/** 3.CONTENT ELEMENTS
---------------------------------------------------------------*/
-
-/* - Dropdown
-------------------------------------------------------------- */
-.navbar-nav .dropdown-toggle::after {
-  border: none;
-}
-
-.navbar-nav .dropdown-item:focus,
-.navbar-nav .dropdown-item:hover,
-.navbar-nav .dropdown-item.active,
-.navbar-nav .dropdown-item:active {
-  color: var(--primary-color);
-  background-color: transparent;
-}
-
-.navbar-nav ul.dropdown-menu>li {
-  font-size: 1em;
-}
-
-ul.dropdown-menu .dropdown-item {
-  display: initial;
-}
-
-.navbar-nav ul.dropdown-menu.show {
-  top: 27px;
-}
-
-/* - Svg Color
-------------------------------------------------------------- */
-svg.light-color {
-  color: var(--light-color);
-}
-
-svg.dark-color {
-  color: var(--dark-color);
-}
-
-svg.primary-color {
-  color: var(--primary-color);
-}
-
-svg.primary-color-500 {
-  color: var(--copyright-background);
-}
-
-/* - Search Bar
-------------------------------------------------------------- */
-form.search-form svg.search {
-  bottom: 24px;
-  z-index: 3;
-}
-
-@media only screen and (max-width: 991px) {
-  #navbar-primary form.search-form {
-    width: 100%;
-  }
-
-  form.search-form svg.search {
-    right: 40px;
-    bottom: 40px;
-  }
-
-  form.search-form input.form-control {
-    background: var(--bs-gray-200);
-  }
-}
-
-/*----------------------------------------------*/
-/* 4 SITE STRUCTURE */
-/*----------------------------------------------*/
-
-/* 4.1 Header
-/*----------------------------------------------*/
-#primary-header.navbar {
-  z-index: 9;
-  padding-top: 0;
-}
-
-div#navbar-primary {
-  box-shadow: 0px 2px 40px rgba(8, 70, 78, 0.10);
-}
-
-.navbar-nav li.nav-item {
-  height: max-content;
-}
-
-.navbar-nav a.nav-link {
-  line-height: 1.2;
-}
-
-.navbar-nav a.nav-link:hover,
-.navbar-nav a.nav-link.active {
-  color: var(--secondary-color) !important;
-  font-weight: bold;
-}
-
-.navbar button.navbar-toggler {
-  z-index: 9;
-}
-
-.navbar button.navbar-toggler svg.navbar-icon {
-  position: fixed;
-  top: 10;
-  right: 30px;
-}
-
-@media only screen and (max-width: 991px) {
-  .navbar-toggler:focus {
-    box-shadow: none;
-  }
-
-  #header .container {
-    max-width: 980px;
-  }
-
-  #header .navbar {
-    box-shadow: none;
-  }
-
-  .navbar-nav li.nav-item {
-    /* font-size: 30px; */
-    /* font-weight: 500; */
-    height: max-content;
-    border: none;
-    padding-bottom: 10px;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .header-top ul.contact-list {
-    padding-top: 20px;
-  }
-
-  .header-top .btn-book {
-    text-align: left !important;
-  }
-
-  .contact-list li {
-    font-size: 14px;
-    padding-right: 20px !important;
-  }
-
-  .navbar-nav li.nav-item {
-    font-size: 1.3em;
-  }
-
-  .navbar button.navbar-toggler svg.navbar-icon {
-    top: 0;
-  }
-}
-
-@media only screen and (max-width: 1400px) and (min-width: 999px) {
-  .get-pro {
-    display: none;
-  }
-}
-
-/* 4.2 Intro (Billboard) Section
-/*----------------------------------------------*/
-section#intro {
-  margin-top: -30px;
-}
-
-#intro .banner-content {
-  top: 10%;
-  left: 16%;
-  width: 80%;
-}
-
-@media only screen and (max-width: 1530px) {
-  #intro .banner-content {
-    top: -7%;
-    left: 5%;
-    width: 74%;
-  }
-
-  #intro img {
-    width: 100%;
-    height: 620px;
-    object-fit: cover;
-  }
-}
-
-@media only screen and (max-width: 1050px) {
-  #intro .banner-content {
-    width: 64%;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  #intro .banner-content {
-    width: 90%;
-  }
-}
-
-/* 4.3 Our Best Services Section
-/*----------------------------------------------*/
-#our-services .icon-box {
-  transition: 0.3s ease-out;
-}
-
-#our-services .icon-box:hover {
-  box-shadow: 0px 2px 40px rgba(236, 51, 5);
-  margin-top: -3px;
-}
-
-#our-services .service-icon-box {
-  box-shadow: 2px 2px 40px rgba(243, 56, 9);
-
-}
-
-@media only screen and (max-width: 1399px) {
-  #our-services .icon-box-content h3.card-title {
-    font-size: 1.2em;
-  }
-
-  #our-services .icon-box-content p {
-    font-size: 0.9em;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  #our-services .icon-box-content h3.card-title {
-    font-size: 1.8em;
-  }
-}
-
-
-/* 4.4 Book Appointment Section
-/*----------------------------------------------*/
-.contact-form select,
-.contact-form input,
-.contact-form .input-group input {
-  width: 98%;
-  height: 60px;
-}
-
-.contact-form .input-group input {
-  padding-right: 450px;
-}
-
-.input-group span.input-group-text {
-  right: 20px;
-  height: 60px;
-  line-height: 3;
-}
-
-.contact-form select.form-select {
-  background-position: right 1.25rem center;
-}
-
-@media only screen and (max-width: 1399px) {
-  .contact-form .input-group input {
-    padding-right: 290px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .contact-form .input-group input {
-    padding-right: 70px;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  #book-appointment .contact-form {
-    display: block !important;
-  }
-}
-
-/* 4.5 Testimonial Section
-/*----------------------------------------------*/
-#testimonial blockquote {
-  padding: 50px;
-}
-
-.review-item svg.quote-up {
-  left: -20px;
-  top: 30px;
-}
-
-.review-item svg.quote-down {
-  right: 70px;
-  bottom: 118px;
-}
-
-.testimonial-swiper .swiper-horizontal>.swiper-pagination-bullets,
-.testimonial-swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
-.testimonial-swiper .swiper-pagination-custom,
-.testimonial-swiper .swiper-pagination-fraction {
-  left: 53px;
-  width: auto;
-}
-
-.swiper-pagination span.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: var(--swiper-pagination-bullet-inactive-color, var(--light-color));
-}
-
-@media only screen and (max-width: 767px) {
-  #testimonial .image-holder {
-    display: none;
-  }
-}
-
-/* 4.6 Our Team Section
-/*----------------------------------------------*/
-#our-team .swiper-horizontal>.swiper-pagination-bullets,
-#our-team .swiper-pagination-bullets.swiper-pagination-horizontal,
-#our-team .swiper-pagination-custom,
-#our-team .swiper-pagination-fraction {
-  bottom: -6px;
-}
-
-.avatar-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-.circle-container {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: auto;
-  border-radius: 50%;
-}
-
-.circle-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: rotate(calc(72deg * var(--i))) translate(160px) rotate(calc(-72deg * var(--i)));
-  text-align: center;
-  cursor: pointer;
-}
-
-.center-member {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-
-@media only screen and (max-width: 767px) {
-  #our-team .team-member {
-    flex-wrap: wrap;
-  }
-}
-
-/* 4.7 Faqs Section
-/*----------------------------------------------*/
-.accordion .accordion-item {
-  border-bottom: 1px solid var(--bs-gray-300) !important;
-}
-
-.accordion .accordion-button:not(.collapsed) {
-  color: var(--dark-color);
-}
-
-.accordion .accordion-button::after {
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 2rem;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.accordion .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='minus' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
-  transform: rotate(0deg);
-}
-
-
-/* 4.8 Tabs- Department Section
-/*----------------------------------------------*/
-
-.medical-department-tab .nav-tabs .nav-item.show .nav-link,
-.medical-department-tab .nav-tabs .nav-link.active,
-.medical-department-tab .nav-tabs .nav-link:hover {
-  color: var(--light-color) !important;
-  background-color: var(--primary-color);
-}
-
-@media only screen and (max-width: 1280px) {
-  .medical-department-tab .tab-content .tab-pane {
-    width: 100%;
-  }
-
-  .medical-department-tab .tab-content .tab-pane:after {
-    background: none;
-  }
-}
-
-@media only screen and (max-width: 680px) {
-  #department .medical-department-tab {
-    padding-left: 10px !important;
-  }
-
-  .medical-department-tab button {
-    padding: 0;
-    font-size: 14px;
-  }
-
-  .medical-department-tab .nav-tabs {
-    padding: 0 !important;
-  }
-
-  .medical-department-tab .tab-content h2 {
-    font-size: 23px;
-  }
-
-  .medical-department-tab .tab-content p {
-    font-size: 15px;
-  }
-}
-
-
-/* 4.9 Blog Section
-/*----------------------------------------------*/
-.post-grid .card-image span {
-  bottom: 0;
-  left: 0;
-  padding: 5px 15px;
-  letter-spacing: 1.2px;
-}
-
-
-/* 4.10 Brand Section
-/*----------------------------------------------*/
-#brand-collection .col .bottom-image {
-  display: none;
-}
-
-#brand-collection .col:hover .bottom-image {
-  display: inline;
-}
-
-#brand-collection .col:hover .top-image {
-  display: none;
-}
-
-
-/* 4.11 Subscribe Section
-/*----------------------------------------------*/
-#subscribe input[type="text"] {
-  width: 100%;
-  background: transparent;
-  border: 2px solid var(--light-color);
-  height: 65px;
-}
-
-#subscribe button.btn-subscribe {
-  right: 2px;
-  bottom: 2px;
-  width: 30%;
-  height: 61px;
-}
-
-#subscribe input::placeholder {
-  color: var(--light-color);
-  opacity: 1;
-}
-
-#subscribe input:focus-visible {
-  outline: transparent;
-}
-
-@media only screen and (max-width: 548px) {
-  #subscribe button.btn-subscribe {
-    bottom: -64px;
-    width: 100%;
-  }
-}
-
-/* 4.12 Footer Section
-/*----------------------------------------------*/
-.footer-menu ul.menu-list {
-  column-count: 2;
-}
-
-.footer-menu table.schedule {
-  width: 100%;
-}
-
-@media only screen and (max-width: 991px) {
-  .footer-menu table.schedule {
-    width: 100%;
-  }
-}
-
-
-/*--------------------------------------------------------------
-blog page style start
---------------------------------------------------------------*/
-.page-item.active .page-link {
-  z-index: 3;
-  color: #fff;
-  background-color: var(--dark-color);
-  border-color: var(--dark-gray-color);
-}
-
-.page-link:hover {
-  z-index: 2;
-  color: var(--dark-color);
-  background-color: #e9ecef;
-  border-color: #dee2e6;
-}
-
-.page-link:focus {
-  z-index: 3;
-  color: var(--dark-color);
-  background-color: #e9ecef;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem var(--dark-gray-color);
-}
-
-.page-link {
-  color: var(--dark-color);
-}
-
-
-
-/*--------------------------------------------------------------
-reviews page style start
---------------------------------------------------------------*/
-.reviews-components {
-  border: 1px solid var(--light-text-color);
-  box-shadow: 0px 12px 90px rgba(12, 12, 12, 0.06);
-  border-radius: 9px;
-}
-
-iconify-icon.quote {
-  font-size: 60px;
-  color: var(--bs-primary-rgb);
-}
-
-
-
-/*--------------------------------------------------------------
-  Price page style
-  --------------------------------------------------------------*/
-.plan-post {
-  border: 1px solid var(--primary-color);
-}
-
-span.price-tick {
-  color: var(--accent-color);
-}
-
-.price-option {
-  height: 320px;
-}
-
-.recommend-price {
-  background: var(--primary-color);
-}
-
-
-
-/*--------------------------------------------------------------
-  Gallery page style
-  --------------------------------------------------------------*/
-
-button.filter-button.gallery-btn {
-  letter-spacing: 0.075rem;
-  border: 2px solid var(--primary-color-400);
-  background: transparent;
-  color: var(--accent-color);
-  border-radius: 30px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  transition: all 0.3s ease-in;
-}
-
-button.filter-button.gallery-btn.active {
-  border: 2px solid var(--black-color);
-}
-
-button.filter-button.gallery-btn:hover {
-  border: 2px solid var(--black-color);
-}
-
-
-
-/*--------------------------------------------------------------
-  Booking page style
-  --------------------------------------------------------------*/
-.form-control:focus {
-  border: 2px solid var(--black-color);
-  box-shadow: none;
-}
-
-
-
-/*--------------------------------------------------------------
-  Department page style
-  --------------------------------------------------------------*/
-span.price-tick {
-  color: var(--primary-color);
-}
-
-
-/* 4.12 Footer Section
-/*----------------------------------------------*/
-
-body, p, span{
-  font-family: 'Roboto', sans-serif;
-}
-
-.why-choose-us .finix-text h2 {
-  font-weight: 500;
-}
-
-@keyframes choose{
-  0%,30%{
-      transform: scale(0);
-      opacity: 1;
-  }
-  50%{
-      transform: scale(1.5);
-      opacity: .7;
-  }
-  100%{
-      transform: scale(2);
-      opacity: 0;
-  }
-}
-
-.why-choose-us .feature-box {
-  background: #fff;
-  padding: 30px;
-  margin-bottom: 30px;
-  position: relative;
-  overflow: hidden;
-  transition: .4s;
-}
-.why-choose-us .feature-box:hover {
-  transform: translateY(-10px);
-}
-.why-choose-us .feature-box:hover .fbc-btn{
-  background: var(--cadet-blue-color);
-  color: #fff;
-}
-.why-choose-us .feature-box::before {
-  content: "";
-  position: absolute;
-  top: -125px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 90%;
-  height: 70%;
-  background: var(--primary-color);
-  border-radius: 50%;
-}
-.why-choose-us .fbc-btn {
-  display: inline-block;
-  height: 90px;
-  width: 90px;
-  line-height: 90px;
-  background: #fff;
-  border-radius: 50%;
-  text-align: center;
-  color: var(--primary-color);
-  position: relative;
-  transition: .4s;
-}
-.active-feature{
-  margin-top: -30px;
-}
-.why-choose-us .finix-text img{
-  position: relative;
-  top: 40px;
-  width: 550px;
-}
-
-
-/* MISSION AND VISION */
-    .speech-bubble {
-      border-radius: 20px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — American Biosources Inc.</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <style>
+    /* ─── CSS Variables (inheriting your palette) ─── */
+    :root {
+      --nav-background: #ffffff;
+      --primary-color-1: #1e3a8a;
+      --primary-color-1-hover: #3b5ed3;
+      --primary-color-2: #dc2626;
+      --primary-color-2-hover: #ef4444;
+      --accent-color: #0ea5e9;
+      --footer-color: #1e3a8a;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --border-color: #e5e7eb;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-ui: 'Syne', sans-serif;
+
+      --transition-fast: 0.15s ease-in-out;
+      --transition-normal: 0.3s ease-in-out;
+      --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* ─── SECTION TITLES ─── */
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--primary-color-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--primary-color-2);
+    }
+
+    /* ─────────────────────────────────────────────
+       1. HERO — Cinematic Split Panel
+    ───────────────────────────────────────────── */
+    .hero-about {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       position: relative;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-      padding: 34px 40px 32px 40px;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      background: var(--primary-color-1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 5rem 4rem 5rem 5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Molecular hex-grid background on left panel */
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(14,165,233,0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220,38,38,0.12) 0%, transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-left .hex-grid {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-color);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.7);
+      max-width: 420px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.7s forwards;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding-bottom: 0.3rem;
+      transition: all var(--transition-normal);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s forwards;
+    }
+    .hero-cta:hover { color: var(--accent-color); border-color: var(--accent-color); gap: 1.25rem; }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(1.05);
+      transform: scale(1.05);
+      animation: zoomOut 1.4s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+
+    /* Red diagonal slash overlay */
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -1px;
+      width: 80px; height: 100%;
+      background: var(--primary-color-1);
+      clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
+      z-index: 3;
+    }
+
+    /* Floating stat card */
+    .hero-stat-card {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      background: rgba(255,255,255,0.97);
+      border-left: 4px solid var(--primary-color-2);
+      padding: 1.5rem 2rem;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 1.1s forwards;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--primary-color-1);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.4s forwards;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%; height: 50%;
+      background: var(--accent-color);
+      animation: scrollDown 1.5s 1.6s infinite;
+    }
+    .scroll-text {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ─────────────────────────────────────────────
+       2. MISSION STRIP — Bold horizontal marquee feel
+    ───────────────────────────────────────────── */
+    .mission-strip {
+      background: var(--primary-color-2);
+      padding: 1.2rem 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .marquee-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       3. STORY SECTION — editorial timeline layout
+    ───────────────────────────────────────────── */
+    .story-section {
+      padding: 7rem 0;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-section::before {
+      content: 'ABI';
+      position: absolute;
+      top: -0.1em;
+      right: -0.05em;
+      font-family: var(--font-display);
+      font-size: 22vw;
+      font-weight: 600;
+      color: rgba(30,58,138,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .story-content-col {
+      position: relative;
+    }
+
+    .story-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+    }
+    .story-tagline strong {
+      font-weight: 600;
+      color: var(--primary-color-1);
+    }
+
+    .story-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .story-image-block {
+      position: relative;
+    }
+    .story-image-main {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .story-image-accent {
+      position: absolute;
+      bottom: -2.5rem;
+      left: -2.5rem;
+      width: 52%;
+      height: 200px;
+      object-fit: cover;
+      border: 6px solid #fff;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+    .founded-badge {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 110px; height: 110px;
+      background: var(--primary-color-2);
+      border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      box-shadow: 0 10px 30px rgba(220,38,38,0.35);
+    }
+    .founded-badge .year {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+    .founded-badge .year-label {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ─────────────────────────────────────────────
+       4. STATS — Animated counters on dark bg
+    ───────────────────────────────────────────── */
+    .stats-section {
+      background: var(--primary-color-1);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(14,165,233,0.12), transparent 60%);
+      pointer-events: none;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 20%; bottom: 20%;
+      width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child::after { display: none; }
+
+    .stat-counter {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-counter .suffix {
+      color: var(--accent-color);
+    }
+    .stat-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+    .stat-icon {
+      width: 42px; height: 42px;
+      background: rgba(14,165,233,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+    }
+
+    /* ─────────────────────────────────────────────
+       5. VALUES — Asymmetric card grid
+    ───────────────────────────────────────────── */
+    .values-section {
+      padding: 7rem 0;
       background: #fff;
     }
-    .bubble-gray {
-      background: #fff;
-      box-shadow: 8px 10px 0 0 var(--cadet-gray-color);
+
+    .values-header { margin-bottom: 4rem; }
+
+    .values-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--text-primary);
     }
-    .section-title {
+    .values-title strong { font-weight: 600; color: var(--primary-color-1); }
+
+    .value-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem 2rem;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+    }
+    .value-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--primary-color-2);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-normal);
+    }
+    .value-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(30,58,138,0.12); }
+    .value-card:hover::before { transform: scaleX(1); }
+
+    .value-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 600;
+      color: rgba(30,58,138,0.07);
+      line-height: 1;
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+    }
+
+    .value-icon-wrap {
+      width: 52px; height: 52px;
+      background: rgba(30,58,138,0.08);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      color: var(--primary-color-1);
+      transition: background var(--transition-normal);
+    }
+    .value-card:hover .value-icon-wrap {
+      background: var(--primary-color-1);
+      color: #fff;
+    }
+
+    .value-title {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .value-body {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Featured (large) value card */
+    .value-card.featured {
+      background: var(--primary-color-1);
+      border-color: var(--primary-color-1);
+    }
+    .value-card.featured .value-number { color: rgba(255,255,255,0.06); }
+    .value-card.featured .value-icon-wrap { background: rgba(255,255,255,0.12); color: #fff; }
+    .value-card.featured .value-title { color: #fff; }
+    .value-card.featured .value-body { color: rgba(255,255,255,0.65); }
+    .value-card.featured::before { background: var(--accent-color); }
+    .value-card.featured:hover { box-shadow: 0 20px 50px rgba(30,58,138,0.35); }
+
+    /* ─────────────────────────────────────────────
+       6. TIMELINE — Vertical milestone track
+    ───────────────────────────────────────────── */
+    .timeline-section {
+      padding: 7rem 0;
+      background: var(--bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-track {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary-color-1), var(--accent-color), var(--primary-color-2));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .timeline-item.visible { opacity: 1; transform: translateX(0); }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.95rem;
+      top: 0.3rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--primary-color-1);
+      border: 3px solid var(--bg-secondary);
+      box-shadow: 0 0 0 2px var(--primary-color-1);
+      transition: transform var(--transition-normal), background var(--transition-normal);
+    }
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.4);
+      background: var(--primary-color-2);
+      box-shadow: 0 0 0 2px var(--primary-color-2);
+    }
+
+    .timeline-year {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-color-2);
+      margin-bottom: 0.4rem;
+    }
+    .timeline-heading {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 440px;
+    }
+
+    .timeline-visual {
+      position: sticky;
+      top: 7rem;
+    }
+    .timeline-visual-inner {
+      background: var(--primary-color-1);
+      aspect-ratio: 4/5;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tl-molecule {
+      width: 60%;
+      opacity: 0.15;
+    }
+    .tl-quote {
+      position: absolute;
+      bottom: 2.5rem; left: 2.5rem; right: 2.5rem;
+    }
+    .tl-quote p {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .tl-quote span {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+    }
+
+    /* ─────────────────────────────────────────────
+       7. LEADERSHIP — Card hover flip effect
+    ───────────────────────────────────────────── */
+    .team-section {
+      padding: 7rem 0;
+      background: #fff;
+    }
+
+    .team-card {
+      perspective: 1000px;
+      height: 420px;
+      cursor: pointer;
+    }
+    .team-card-inner {
+      position: relative;
+      width: 100%; height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .team-card:hover .team-card-inner { transform: rotateY(180deg); }
+
+    .team-front, .team-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .team-front {
+      background: var(--bg-secondary);
+      overflow: hidden;
+    }
+    .team-front img {
+      width: 100%; height: 72%;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(25%);
+      transition: filter var(--transition-slow);
+    }
+    .team-card:hover .team-front img { filter: grayscale(0%); }
+    .team-front-info {
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--primary-color-2);
+    }
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .team-role {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary-color-2);
+      margin-top: 0.2rem;
+    }
+
+    .team-back {
+      background: var(--primary-color-1);
+      transform: rotateY(180deg);
+      padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .team-back-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .team-back-role {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+    }
+    .team-bio {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+      flex: 1;
+    }
+    .team-social {
+      display: flex; gap: 0.75rem; margin-top: 1.5rem;
+    }
+    .team-social a {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; text-decoration: none;
+      font-size: 0.85rem;
+      transition: all var(--transition-normal);
+    }
+    .team-social a:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+
+    /* ─────────────────────────────────────────────
+       8. CERTIFICATIONS — Horizontal scroll strip
+    ───────────────────────────────────────────── */
+    .certs-section {
+      padding: 5rem 0;
+      background: var(--bg-secondary);
+      overflow: hidden;
+    }
+
+    .cert-grid {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+    }
+    .cert-grid::-webkit-scrollbar { display: none; }
+
+    .cert-badge {
+      flex-shrink: 0;
+      width: 180px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+    .cert-badge:hover {
+      border-color: var(--primary-color-1);
+      box-shadow: 0 8px 24px rgba(30,58,138,0.1);
+      transform: translateY(-4px);
+    }
+    .cert-icon {
       font-size: 2rem;
+      color: var(--primary-color-1);
+      margin-bottom: 0.75rem;
     }
-    .section-desc {
-      font-size: 0.97rem;
+    .cert-name {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
     }
-    @media (max-width: 767.98px) {
-      .speech-bubble {
-        margin-bottom: 2rem;
+    .cert-body {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 0.3rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       9. CTA BANNER — Bold diagonal
+    ───────────────────────────────────────────── */
+    .cta-banner {
+      background: var(--primary-color-1);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(14,165,233,0.2), transparent 55%);
+    }
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      right: -5%;
+      top: -20%;
+      width: 55%;
+      height: 140%;
+      background: var(--primary-color-2);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+      opacity: 0.12;
+    }
+
+    .cta-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    .cta-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+    .cta-heading em { font-style: italic; color: var(--accent-color); }
+
+    .btn-cta-primary {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #fff;
+      color: var(--primary-color-1);
+      border: 2px solid #fff;
+      padding: 0.85rem 2.2rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all var(--transition-normal);
+    }
+    .btn-cta-primary:hover {
+      background: transparent;
+      color: #fff;
+    }
+
+    .btn-cta-outline {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 0.85rem 2.2rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all var(--transition-normal);
+    }
+    .btn-cta-outline:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL ANIMATIONS
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─────────────────────────────────────────────
+       KEYFRAMES
+    ───────────────────────────────────────────── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomOut {
+      to { transform: scale(1); }
+    }
+    @keyframes scrollDown {
+      0%   { top: -100%; }
+      100% { top: 200%; }
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes counterPulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.04); }
+    }
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 991.98px) {
+      .hero-about { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 7rem 2rem 4rem; min-height: 70vh; }
+      .hero-right { height: 50vw; }
+      .hero-right::after { display: none; }
+      .hero-stat-card { right: 1.5rem; bottom: 1.5rem; padding: 1rem 1.5rem; }
+      .stat-number { font-size: 2.2rem; }
+      .scroll-indicator { display: none; }
+      .story-image-accent { display: none; }
+      .timeline-visual { display: none; }
+      .team-card { height: 360px; }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-left { padding: 6rem 1.5rem 3rem; }
+      .values-section, .story-section, .team-section, .timeline-section { padding: 4rem 0; }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+    ::-webkit-scrollbar-thumb { background: var(--primary-color-1); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     1. CINEMATIC HERO
+══════════════════════════════════════════════ -->
+<section class="hero-about">
+
+  <!-- Left panel -->
+  <div class="hero-left">
+    <!-- SVG hex-grid watermark -->
+    <svg class="hex-grid" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <defs>
+        <pattern id="hexPat" x="0" y="0" width="60" height="70" patternUnits="userSpaceOnUse">
+          <polygon points="30,5 55,17.5 55,52.5 30,65 5,52.5 5,17.5" stroke="white" stroke-width="1" fill="none"/>
+        </pattern>
+      </defs>
+      <rect width="600" height="600" fill="url(#hexPat)"/>
+    </svg>
+
+    <p class="hero-eyebrow">American Biosources Inc. &mdash; About Us</p>
+    <h1 class="hero-title">
+      Advancing Life<br/>
+      Through <em>Science</em><br/>
+      &amp; Innovation
+    </h1>
+    <p class="hero-desc">
+      A leading force in biopharmaceutical research and supply, delivering high-purity biological materials and innovative solutions that power the medicines of tomorrow.
+    </p>
+    <a href="#story" class="hero-cta">
+      Discover Our Story <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- Right panel -->
+  <div class="hero-right">
+    <!-- Using a high-quality Unsplash placeholder — replace with your own -->
+    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80" alt="Laboratory research at American Biosources"/>
+
+    <!-- Floating stat card -->
+    <div class="hero-stat-card">
+      <div class="stat-number">25<span style="color:var(--primary-color-2);font-size:2rem;">+</span></div>
+      <div class="stat-label">Years of Biopharmaceutical Excellence</div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator (visible on desktop) -->
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     2. MARQUEE STRIP
+══════════════════════════════════════════════ -->
+<div class="mission-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- Duplicate items so it looks infinite -->
+    <script>
+      const tags = ['Biopharmaceutical Innovation','GMP Certified','FDA Compliant','ISO 9001 Accredited','Human-Grade Materials','Cutting-Edge R&D','Trusted Globally','Precision Biology'];
+      const track = document.currentScript.parentElement;
+      [...tags, ...tags].forEach(t => {
+        track.insertAdjacentHTML('beforeend', `<span class="marquee-item"><span class="marquee-dot"></span>${t}</span>`);
+      });
+    </script>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     3. OUR STORY
+══════════════════════════════════════════════ -->
+<section class="story-section" id="story">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Text -->
+      <div class="col-lg-5 story-content-col">
+        <p class="section-label reveal">Our Story</p>
+        <h2 class="story-tagline reveal reveal-delay-1">
+          Built on a <strong>commitment</strong> to biological excellence
+        </h2>
+        <p class="story-body reveal reveal-delay-2">
+          Founded in the United States, American Biosources Inc. emerged from a shared vision: to bridge the gap between cutting-edge science and reliable pharmaceutical supply chains. From our earliest days sourcing premium human-derived biological materials, we have remained steadfast in our pursuit of purity, traceability, and scientific integrity.
+        </p>
+        <p class="story-body reveal reveal-delay-3">
+          Today, our state-of-the-art facilities operate under rigorous regulatory frameworks — serving global biotech firms, research institutions, and pharmaceutical companies who depend on materials that meet the highest quality standards. Every vial, every sample, every shipment carries the promise of American Biosources.
+        </p>
+
+        <div class="row g-3 mt-1">
+          <div class="col-6 reveal reveal-delay-2">
+            <div style="border-left:3px solid var(--primary-color-2);padding-left:1rem;">
+              <div style="font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--primary-color-1);">200<span style="color:var(--primary-color-2);">+</span></div>
+              <div style="font-size:0.8rem;color:var(--text-secondary);">Product Catalog Items</div>
+            </div>
+          </div>
+          <div class="col-6 reveal reveal-delay-3">
+            <div style="border-left:3px solid var(--accent-color);padding-left:1rem;">
+              <div style="font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--primary-color-1);">50<span style="color:var(--accent-color);">+</span></div>
+              <div style="font-size:0.8rem;color:var(--text-secondary);">Countries Served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="col-lg-7 reveal">
+        <div class="story-image-block">
+          <img class="story-image-main" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Biopharmaceutical laboratory"/>
+          <img class="story-image-accent" src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&q=80" alt="Research team"/>
+          <div class="founded-badge">
+            <span class="year">1999</span>
+            <span class="year-label">Founded</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     4. ANIMATED STATS
+══════════════════════════════════════════════ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-icon"><i class="bi bi-activity"></i></div>
+          <div class="stat-counter"><span class="count" data-target="25">0</span><span class="suffix">+</span></div>
+          <div class="stat-desc">Years in Operation</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
+          <div class="stat-counter"><span class="count" data-target="200">0</span><span class="suffix">+</span></div>
+          <div class="stat-desc">Catalog Products</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-icon"><i class="bi bi-globe2"></i></div>
+          <div class="stat-counter"><span class="count" data-target="50">0</span><span class="suffix">+</span></div>
+          <div class="stat-desc">Countries Served</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-icon"><i class="bi bi-award"></i></div>
+          <div class="stat-counter"><span class="count" data-target="99">0</span><span class="suffix">%</span></div>
+          <div class="stat-desc">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     5. VALUES — Asymmetric Grid
+══════════════════════════════════════════════ -->
+<section class="values-section">
+  <div class="container">
+    <div class="row values-header align-items-end">
+      <div class="col-lg-6">
+        <p class="section-label reveal">What Drives Us</p>
+        <h2 class="values-title reveal reveal-delay-1">Core <strong>Values</strong> that define<br/>every decision we make</h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 reveal reveal-delay-2">
+        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.75;">
+          At American Biosources, our principles aren't framed on walls — they're embedded in every protocol, every partnership, and every product we release to the world.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <!-- Large featured card -->
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="value-card featured h-100">
+          <span class="value-number">01</span>
+          <div class="value-icon-wrap"><i class="bi bi-shield-check"></i></div>
+          <h3 class="value-title">Uncompromising Quality</h3>
+          <p class="value-body">Every biological material leaving our facility undergoes multi-stage QC verification. We hold ourselves to standards that exceed regulatory minimums — because lives depend on it.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="value-card h-100">
+          <span class="value-number">02</span>
+          <div class="value-icon-wrap"><i class="bi bi-lightbulb"></i></div>
+          <h3 class="value-title">Scientific Innovation</h3>
+          <p class="value-body">Continuous investment in R&amp;D keeps our methodologies at the forefront. We evolve alongside the science we serve.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="value-card h-100">
+          <span class="value-number">03</span>
+          <div class="value-icon-wrap"><i class="bi bi-people"></i></div>
+          <h3 class="value-title">Ethical Sourcing</h3>
+          <p class="value-body">Our supply chain adheres to strict ethical and informed-consent frameworks. We believe transparency is the foundation of trust.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="value-card h-100">
+          <span class="value-number">04</span>
+          <div class="value-icon-wrap"><i class="bi bi-arrow-repeat"></i></div>
+          <h3 class="value-title">Regulatory Compliance</h3>
+          <p class="value-body">Full FDA, GMP, and ISO conformance isn't a checkbox — it's a living commitment that shapes daily operations and long-term strategy.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="value-card h-100">
+          <span class="value-number">05</span>
+          <div class="value-icon-wrap"><i class="bi bi-graph-up-arrow"></i></div>
+          <h3 class="value-title">Client Partnership</h3>
+          <p class="value-body">We view our clients as partners in progress — offering custom formulations, technical consultation, and responsive support that go far beyond transactional interactions.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="value-card h-100">
+          <span class="value-number">06</span>
+          <div class="value-icon-wrap"><i class="bi bi-leaf"></i></div>
+          <h3 class="value-title">Sustainability</h3>
+          <p class="value-body">Environmental responsibility is woven into our manufacturing and logistics operations — reducing our footprint while expanding our impact on human health.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     6. MILESTONES TIMELINE
+══════════════════════════════════════════════ -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <p class="section-label reveal">Our Journey</p>
+        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--text-primary);">
+          Milestones that <strong style="font-weight:600;color:var(--primary-color-1);">shaped</strong> our path
+        </h2>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="timeline-track">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1999</div>
+            <h3 class="timeline-heading">Company Founded</h3>
+            <p class="timeline-text">American Biosources Inc. is established with a clear mission: to supply the biopharmaceutical industry with the highest-quality human biological materials available.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2004</div>
+            <h3 class="timeline-heading">First GMP Certification</h3>
+            <p class="timeline-text">Achieved Good Manufacturing Practice certification, signaling our transition from a regional supplier to a compliant, audited biopharmaceutical partner.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2009</div>
+            <h3 class="timeline-heading">International Expansion</h3>
+            <p class="timeline-text">Extended our distribution network to 20+ countries across Europe and Asia, establishing cold-chain logistics that maintain product integrity across hemispheres.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2015</div>
+            <h3 class="timeline-heading">ISO 9001 Accreditation</h3>
+            <p class="timeline-text">Earned ISO 9001 certification, formalizing our quality management system and reinforcing client confidence in our processes at every level.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2020</div>
+            <h3 class="timeline-heading">COVID-19 Response Contribution</h3>
+            <p class="timeline-text">Played a critical role supplying serum and plasma materials to leading vaccine developers during the global pandemic — a proud chapter in our history.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <h3 class="timeline-heading">New R&D Facility Launch</h3>
+            <p class="timeline-text">Opened our advanced biopharmaceutical R&amp;D center, tripling our custom formulation capacity and enabling next-generation cell and gene therapy material development.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sticky visual -->
+      <div class="col-lg-5 offset-lg-1">
+        <div class="timeline-visual reveal">
+          <div class="timeline-visual-inner">
+            <!-- DNA / molecule SVG -->
+            <svg class="tl-molecule" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 10 C60 40 140 70 100 100 C60 130 140 160 100 190 C60 220 140 250 100 290" stroke="white" stroke-width="2"/>
+              <path d="M100 10 C140 40 60 70 100 100 C140 130 60 160 100 190 C140 220 60 250 100 290" stroke="rgba(14,165,233,0.7)" stroke-width="2"/>
+              <circle cx="100" cy="10" r="5" fill="white"/>
+              <circle cx="100" cy="55" r="4" fill="rgba(14,165,233,0.8)"/>
+              <circle cx="100" cy="100" r="5" fill="white"/>
+              <circle cx="100" cy="145" r="4" fill="rgba(220,38,38,0.8)"/>
+              <circle cx="100" cy="190" r="5" fill="white"/>
+              <circle cx="100" cy="235" r="4" fill="rgba(14,165,233,0.8)"/>
+              <circle cx="100" cy="290" r="5" fill="white"/>
+              <line x1="70" y1="38" x2="130" y2="38" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="60" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="70" y1="130" x2="130" y2="130" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="60" y1="163" x2="140" y2="163" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="70" y1="220" x2="130" y2="220" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="60" y1="258" x2="140" y2="258" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            </svg>
+
+            <div class="tl-quote">
+              <p>"Science is the engine of our mission — quality is the fuel."</p>
+              <span>Leadership Philosophy &mdash; ABI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     7. LEADERSHIP TEAM
+══════════════════════════════════════════════ -->
+<section class="team-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <p class="section-label reveal">Our Leadership</p>
+        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--text-primary);">
+          The <strong style="font-weight:600;color:var(--primary-color-1);">people</strong> behind<br/> the science
+        </h2>
+      </div>
+      <div class="col-lg-4 offset-lg-1 d-flex align-items-end reveal reveal-delay-2">
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.75;">Hover over a card to learn more about each team member.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO"/>
+              <div class="team-front-info">
+                <div class="team-name">Dr. James Harrington</div>
+                <div class="team-role">Chief Executive Officer</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Dr. James Harrington</div>
+                <div class="team-back-role">Chief Executive Officer</div>
+                <p class="team-bio">With over 28 years in biopharmaceuticals, Dr. Harrington has led ABI through transformative growth — from regional supplier to a globally recognized partner in biological excellence.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="CSO"/>
+              <div class="team-front-info">
+                <div class="team-name">Dr. Priya Mehta</div>
+                <div class="team-role">Chief Scientific Officer</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Dr. Priya Mehta</div>
+                <div class="team-back-role">Chief Scientific Officer</div>
+                <p class="team-bio">A renowned biochemist with a PhD from Johns Hopkins, Dr. Mehta leads our R&amp;D division and holds 12 patents in biological material processing and stabilization.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="COO"/>
+              <div class="team-front-info">
+                <div class="team-name">Robert Chen</div>
+                <div class="team-role">Chief Operations Officer</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Robert Chen</div>
+                <div class="team-back-role">Chief Operations Officer</div>
+                <p class="team-bio">Robert architects the operational excellence that allows ABI to deliver reliably to clients across 50+ countries. His background spans global cold-chain logistics and GMP facility management.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="QA Director"/>
+              <div class="team-front-info">
+                <div class="team-name">Dr. Lisa Park</div>
+                <div class="team-role">Director, Quality Assurance</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Dr. Lisa Park</div>
+                <div class="team-back-role">Director, Quality Assurance</div>
+                <p class="team-bio">Dr. Park's rigorous approach to quality governance has maintained ABI's unblemished regulatory record. She has led over 40 successful FDA and international inspections.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     8. CERTIFICATIONS
+══════════════════════════════════════════════ -->
+<section class="certs-section">
+  <div class="container">
+    <div class="row mb-4 align-items-center">
+      <div class="col-md-6">
+        <p class="section-label reveal">Accreditations &amp; Certifications</p>
+        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:var(--text-primary);">
+          Recognized by the world's <strong style="font-weight:600;color:var(--primary-color-1);">leading</strong> regulatory bodies
+        </h2>
+      </div>
+    </div>
+
+    <div class="cert-grid reveal">
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+        <div class="cert-name">FDA Registered</div>
+        <div class="cert-body">U.S. Food &amp; Drug Administration</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+        <div class="cert-name">ISO 9001:2015</div>
+        <div class="cert-body">Quality Management System</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-building-check"></i></div>
+        <div class="cert-name">GMP Certified</div>
+        <div class="cert-body">Good Manufacturing Practice</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-clipboard2-pulse-fill"></i></div>
+        <div class="cert-name">AABB Accredited</div>
+        <div class="cert-body">Blood &amp; Biotherapies</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-globe-americas"></i></div>
+        <div class="cert-name">CE Marked</div>
+        <div class="cert-body">European Conformity</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-shield-fill-check"></i></div>
+        <div class="cert-name">CLIA Certified</div>
+        <div class="cert-body">Clinical Lab Improvement</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-recycle"></i></div>
+        <div class="cert-name">ISO 14001</div>
+        <div class="cert-body">Environmental Management</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-people-fill"></i></div>
+        <div class="cert-name">IRB Compliant</div>
+        <div class="cert-body">Ethical Human Research Board</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     9. CTA BANNER
+══════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <div class="col-lg-7 reveal">
+        <p class="cta-label">Partner With Us</p>
+        <h2 class="cta-heading">
+          Ready to <em>elevate</em> your<br/>biopharmaceutical supply chain?
+        </h2>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#" class="btn-cta-primary">Request a Consultation</a>
+          <a href="#" class="btn-cta-outline">View Our Products <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 d-none d-lg-block reveal reveal-delay-2">
+        <!-- Abstract molecule decoration -->
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.2;animation:rotateSlow 20s linear infinite;">
+          <circle cx="100" cy="100" r="80" stroke="white" stroke-width="1.5" stroke-dasharray="8 6"/>
+          <circle cx="100" cy="100" r="50" stroke="rgba(14,165,233,0.8)" stroke-width="1"/>
+          <circle cx="100" cy="20" r="10" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="170" cy="140" r="8" fill="rgba(14,165,233,0.6)"/>
+          <circle cx="30" cy="140" r="8" fill="rgba(220,38,38,0.6)"/>
+          <line x1="100" y1="20" x2="170" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <line x1="170" y1="140" x2="30" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <line x1="30" y1="140" x2="100" y2="20" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  /* ─── Scroll reveal ─── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
       }
-    }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
 
+  /* ─── Timeline items staggered reveal ─── */
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 120);
+        tlObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  timelineItems.forEach(el => tlObserver.observe(el));
 
-/* GLOBAL ALLIANCE */
-    .left-section-alliance {
-      background: linear-gradient(120deg, #1B365D 50%, #0C7BC0 100%);;
-      display: flex;
-      justify-content: center;
-      align-items: left;
-      text-align: left;
-      flex-direction: column;
-      clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
-    }
+  /* ─── Animated counters ─── */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(current);
+    }, 16);
+  }
 
-    .right-section-alliance {
-      padding: 50px 60px;
-    }
+  const counterEls = document.querySelectorAll('.count');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counterEls.forEach(el => counterObserver.observe(el));
 
-    .highlight-box {
-      border-left: 4px solid var(--primary-color);
-      background-color: #f8f9fa;
-      border-radius: 5px;
-    }
-
-/* GENE THERAPY PARTNERSHIP */
-    .right-section-therapy {
-      background: linear-gradient(120deg, #1B365D 50%, #0C7BC0 100%);;
-      display: flex;
-      justify-content: center;
-      align-items: right;
-      text-align: right;
-      flex-direction: column;
-      clip-path: polygon(0 0, 0% 0%, 100% 200%, 100% 0%);
-    }
-
-    .left-section-therapy {
-      padding: 50px 60px;
-    }
+  /* ─── Parallax on hero image ─── */
+  const heroRight = document.querySelector('.hero-right img');
+  if (heroRight) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      heroRight.style.transform = `scale(1) translateY(${scrolled * 0.2}px)`;
+    }, { passive: true });
+  }
+</script>
+</body>
+</html>

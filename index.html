@@ -15,6 +15,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
     <!-- Font Awesome CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Style sheet -->
@@ -43,7 +44,7 @@
                 <li class="nav-item"><a href="./products.html" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="./services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="./news-podcast.html" class="nav-link">News & Podcast</a></li>
-                <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li>
+                <!-- <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li> -->
                 <li class="nav-item"><a href="./contact-us.html" class="nav-link">Contact Us</a></li>
             </ul>
 
@@ -95,7 +96,7 @@
     <section class="products-section">
         <div class="container">
             <div class="section-white-heading fade-in-up">
-                <h2 class="section-white-heading">Our Product Categories</h2>
+                <h2 class="section-white-heading text-center">Our Product Categories</h2>
                 <!-- <p class="section-subtitle">Click on any category to explore our innovative solutions</p> -->
             </div>
             
@@ -200,6 +201,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="cta-buttons d-flex justify-content-center">
+                <a href="./products.html" class="btn btn-secondary">More Products</a>
+            </div>
         </div>
     </section>
     <!-- Products Section End -->
@@ -275,6 +280,9 @@
                     <p>Compliance & approvals</p>
                 </div>
             </div>
+            <div class="cta-buttons d-flex justify-content-center">
+                <a href="./products.html" class="btn btn-primary">More Products</a>
+            </div>
         </section>
 
         <!-- POPUP -->
@@ -295,6 +303,75 @@
         </div>
     </section>
     <!-- Services Section End -->
+    
+    <!-- PARTNERS Section Start -->
+    <section class="partners-section py-5" style="background: linear-gradient(135deg, #1B365D 50%, #0C7BC0 100%);">
+        <div class="container">
+            <h2 class="text-center fw-bold text-white mb-5">Partners</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded bg-white shadow p-4">
+
+                            <div class="carousel-item active text-center">
+                                <p class="fst-italic fs-5">
+                                    "Global Alliance for Vaccine Innovation"
+                                </p>
+                                <div class="mb-2">
+                                    <span class="text-warning fs-4">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                </div>
+                                <div class="fw-bold text-primary fs-5">VP Quality</div>
+                                <div class="text-danger small">PLATFORM TECHNOLOGY - CELLLINE</div>
+                            </div>
+
+                            <div class="carousel-item text-center">
+                                <p class="fst-italic fs-5">
+                                    "Gene Therapy & Gene editing Partnerships"
+                                </p>
+                                <div class="mb-2">
+                                    <span class="text-warning fs-4">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                </div>
+                                <div class="fw-bold text-primary fs-5">Director of Operations</div>
+                                <div class="text-danger small">USA PARTNERS FOR GENE THERAPY & EDITING</div>
+                            </div>
+
+                            <div class="carousel-item text-center">
+                                <p class="fst-italic fs-5">
+                                    "Commercial JV with SPC Switzerland: Natural Cosmetics"
+                                </p>
+                                <div class="mb-2">
+                                    <span class="text-warning fs-4">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                </div>
+                                <div class="fw-bold text-primary fs-5">Director of Operations</div>
+                                <div class="text-danger small">Global Speciality Pharma</div>
+                            </div>
+
+                            <div class="carousel-item text-center">
+                                <p class="fst-italic fs-5">
+                                    "Gene Therapy Partnerships in the Middle East and the USA"
+                                </p>
+                                <div class="mb-2">
+                                    <span class="text-warning fs-4">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                </div>
+                                <div class="fw-bold text-primary fs-5">Director of Operations</div>
+                                <div class="text-danger small">GENE THERAPY & BIOTHERAPEUTICS</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3">
+                            <div class="carousel-indicators position-static mb-0">
+                                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PARTNERS Section End -->
 
     <!-- World Map Section Start -->
     <div class="map">
@@ -362,6 +439,12 @@
         <i class="fas fa-chevron-up"></i>
     </button>
     
+    
+    <!-- Bootstrap 5 JS Bundle (Needed for carousel functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTRAP JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <!-- Banner Slider Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

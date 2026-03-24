@@ -17,26 +17,22 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+
     <!-- Style sheet -->
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/about.css">
 
     <!-- Slick CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
-    <!-- CSS FILES -->        
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">       -->
-</head>
+    </head>
 <body>
     
     <!-- NavBar Section Start -->
@@ -54,7 +50,7 @@
                 <li class="nav-item"><a href="./products.html" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="./services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="./news-podcast.html" class="nav-link">News & Podcast</a></li>
-                <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li>
+                <!-- <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li> -->
                 <li class="nav-item"><a href="./contact-us.html" class="nav-link">Contact Us</a></li>
             </ul>
 
@@ -68,183 +64,588 @@
     <!-- NavBar Section End -->
 
     <!-- Banner Container Section Start -->
-    <header class="biopharma-banner" data-bg="./asserts/images/about.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center; height: 100vh;">
+    <header class="biopharma-banner" data-bg="./assets/banners/home.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center;">
         <div class="banner-content">
-            <div class="headline fade-in-up">
-                <h1>About Us</h1>
+            <div class="headline">
+                <h1>About US</h1>
             </div>
         </div>
-        <!-- Animated Background -->
         <canvas id="dna-animation"></canvas>
     </header>
     <!-- Banner Container Section End -->
 
-    <!-- Services Introduction Section Start -->
-    <section class="services-intro">
+    <!-- About the page Section Start -->
+    <section class="page-intro">
         <div class="container">
-            <div class="intro-content fade-in-up">
-                <h2 class="section-title">Who <span class="gradient-text">We Are</span></h2>
+            <div class="intro-content">
+                <h2 class="section-title">A Legacy of <span class="gradient-text">Scientific Excellence</span></h2>
                 <p class="intro-description">
-                    Combining decades of scientific expertise with cutting-edge AI technology to develop next-generation therapeutics.
-                </p>
-                <p class="intro-description">
-                    American Biosources Inc. stands at the forefront of biopharmaceutical innovation, leveraging advanced artificial intelligence to revolutionize drug discovery and development. As a clinical-stage company, we focus on developing universal seasonal and pandemic influenza vaccines alongside breakthrough therapeutic proteins and biosimilars.
-                </p>
-                <p class="intro-description">
-                    Our multidisciplinary team combines deep scientific expertise with state-of-the-art computational biology, machine learning, and bioprocess engineering to accelerate the development of life-saving treatments. We are committed to addressing the most pressing healthcare challenges of our time through innovative research and strategic partnerships.
-                </p>
-                <p class="intro-description">
-                    With a strong foundation in regulatory excellence and quality assurance, we ensure that every product we develop meets the highest standards of safety and efficacy, bringing hope to patients worldwide.
+                    AMERICAN BIOSOURCES INC., was founded on a simple, powerful vision: to become a global leader in the biopharmaceutical landscape by conquering scientific frontiers. We focus on areas of high unmet need where our domain expertise and knowledge in biologics makes a profound difference in patients lives.
                 </p>
             </div>
         </div>
     </section>
-    <!-- Services Introduction Section End -->
+    <!-- About the page Section End -->
    
-
-    <!-- vision & mission -->
     
-            <!-- <section class="timeline-section section-padding" id="section_3">
-                <div class="section-overlay"></div>
+<!-- ══════════════════════════════════════════════
+     1. CINEMATIC HERO
+══════════════════════════════════════════════ -->
+<section class="hero-about">
 
-                <div class="container">
-                    <div class="row">
+  <!-- Left panel -->
+  <div class="hero-left">
+    <!-- SVG hex-grid watermark -->
+    <svg class="hex-grid" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <defs>
+        <pattern id="hexPat" x="0" y="0" width="60" height="70" patternUnits="userSpaceOnUse">
+          <polygon points="30,5 55,17.5 55,52.5 30,65 5,52.5 5,17.5" stroke="white" stroke-width="1" fill="none"/>
+        </pattern>
+      </defs>
+      <rect width="600" height="600" fill="url(#hexPat)"/>
+    </svg>
 
-                        <div class="col-12 text-center">
-                            <h2 class="text-white mb-4">How does it work?</h1>
-                        </div>
-
-                        <div class="col-lg-10 col-12 mx-auto">
-                            <div class="timeline-container">
-                                <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
-                                    <div class="list-progress">
-                                        <div class="inner"></div>
-                                    </div>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">Search your favourite topic</h4>
-
-                                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, cumque magnam? Sequi, cupiditate quibusdam alias illum sed esse ad dignissimos libero sunt, quisquam numquam aliquam? Voluptas, accusamus omnis?</p>
-
-                                        <div class="icon-holder">
-                                          <i class="bi-search"></i>
-                                        </div>
-                                    </li>
-                                    
-                                    <li>
-                                        <h4 class="text-white mb-3">Bookmark &amp; Keep it for yourself</h4>
-
-                                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis est vel quo, nihil repellat quia velit error modi earum similique odit labore. Doloremque, repudiandae?</p>
-
-                                        <div class="icon-holder">
-                                          <i class="bi-bookmark"></i>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">Read &amp; Enjoy</h4>
-
-                                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vero quisquam, rem assumenda similique voluptas distinctio, iste est hic eveniet debitis ut ducimus beatae id? Quam culpa deleniti officiis autem?</p>
-
-                                        <div class="icon-holder">
-                                          <i class="bi-book"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-    <section class="features-section">
-  <div class="features-container">
-    
-    <div class="feature-card">
-      <div class="dot"></div>
-      <h3>Our Mission</h3>
-      <p>
-        Improving Lives By Quality, Affordability, Availability & Accessibility. To be amongst the leading biopharma companies in the world by extending our presence globally through quality and cost-effective biologics, biotherapeutics and biosimilars to compassionately address human and animal suffering.
-      </p>
-    </div>
-
-    <div class="feature-card">
-      <div class="dot"></div>
-      <h3>Our Vision</h3>
-        <p>Time to Market Quality Products for unmet Medical Needs. By leveraging extensive biotech expertise, we envision creating innovative biologics, speciality pharmaceuticals and biosimilars businesses globally.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="dot"></div>
-      <h3>Our Strategy</h3>
-      <p>
-        Our strategy focuses on time-to-market solutions for affordability, accessibility, and availability 
-                   for equitable distribution of COVID-19 and other infectious disease vaccines, biological drugs, 
-                   gene therapy, and therapeutic proteins (innovator & biosimilar) for unmet medical needs.
-      </p>
-    </div>
-
+    <p class="hero-eyebrow">American Biosources Inc. &mdash; About Us</p>
+    <h1 class="hero-title">
+      Advancing Life<br/>
+      Through <em>Science</em><br/>
+      &amp; Innovation
+    </h1>
+    <p class="hero-desc">
+      A leading force in biopharmaceutical research and supply, delivering high-purity biological materials and innovative solutions that power the medicines of tomorrow.
+    </p>
+    <a href="#story" class="hero-cta">
+      Discover Our Story <i class="bi bi-arrow-right"></i>
+    </a>
   </div>
-    </section>
 
-    <!-- about -->
-    <section class="about-section">
-    <div class="about-content">
-        <h2>About ABSNovacell Biopharmaceuticals Limited</h2>
+  <!-- Right panel -->
+  <div class="hero-right">
+    <!-- Using a high-quality Unsplash placeholder — replace with your own -->
+    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80" alt="Laboratory research at American Biosources"/>
 
-        <p>
-        ABSNovacell Biopharmaceuticals Limited is a spun off from American Biosources Inc., NJ, USA.
-        ABSINC was originally established in year 2001, having R & D labs and developmental laboratories in USA.
-        Technology licenses and transfers for commercialization to India and rest of the world.
-        </p>
-
-        <p>
-        The company was originally founded by two world-renowned scientists with over 50 years of combined experience,
-        along with global biopharma executives, on a strong foundation of research innovation,
-        novelty and intellectual property generation.
-        We also possess extensive expertise with the USFDA, EMEA, MHRA and WHO.
-        </p>
-
-        <p>
-        ABSNovacell Biopharmaceuticals Limited is a Biopharmaceutical & Biotechnology R&D,
-        Process Development and Clinical stage company.
-        We have commercial products in speciality Pharmaceuticals, Nutraceuticals,
-        Diagnostics and Swiss cosmetics.
-        </p>
+    <!-- Floating stat card -->
+    <div class="hero-stat-card">
+      <div class="stat-number">25<span style="color:var(--primary-color-2);font-size:2rem;">+</span></div>
+      <div class="stat-label">Years of Biopharmaceutical Excellence</div>
     </div>
-    </section>
+  </div>
 
-    <!-- Our values -->
-    <section class="services-intro">
-        <div class="container">
-            <div class="intro-content fade-in-up">
-                <h2 class="section-title">Our <span class="gradient-text">Values</span></h2>
-                <p class="intro-description">
-                    <b>Innovation</b> - Pioneering breakthrough solutions through cutting-edge research and development
-                </p>
-                <p class="intro-description">
-                    <b>Quality</b> - Maintaining the highest standards in all our products and services
-                </p>
-                <p class="intro-description">
-                    <b>Integrity</b> - Operating with transparency, honesty, and ethical business practices
-                </p>
-                <p class="intro-description">
-                    <b>Global Impact</b> - Making healthcare accessible and affordable worldwide
-                </p>
+  <!-- Scroll indicator (visible on desktop) -->
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     2. MARQUEE STRIP
+══════════════════════════════════════════════ -->
+<div class="mission-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- Duplicate items so it looks infinite -->
+    <script>
+      const tags = ['Biopharmaceutical Innovation','GMP Certified','FDA Compliant','ISO 9001 Accredited','Human-Grade Materials','Cutting-Edge R&D','Trusted Globally','Precision Biology'];
+      const track = document.currentScript.parentElement;
+      [...tags, ...tags].forEach(t => {
+        track.insertAdjacentHTML('beforeend', `<span class="marquee-item"><span class="marquee-dot"></span>${t}</span>`);
+      });
+    </script>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     3. OUR STORY
+══════════════════════════════════════════════ -->
+<section class="story-section" id="story">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Text -->
+      <div class="col-lg-5 story-content-col">
+        <p class="section-label reveal">Our Story</p>
+        <h2 class="story-tagline reveal reveal-delay-1">
+          Built on a <strong>commitment</strong> to biological excellence
+        </h2>
+        <p class="story-body reveal reveal-delay-2">
+          Founded in the United States, American Biosources Inc. emerged from a shared vision: to bridge the gap between cutting-edge science and reliable pharmaceutical supply chains. From our earliest days sourcing premium human-derived biological materials, we have remained steadfast in our pursuit of purity, traceability, and scientific integrity.
+        </p>
+        <p class="story-body reveal reveal-delay-3">
+          Today, our state-of-the-art facilities operate under rigorous regulatory frameworks — serving global biotech firms, research institutions, and pharmaceutical companies who depend on materials that meet the highest quality standards. Every vial, every sample, every shipment carries the promise of American Biosources.
+        </p>
+
+        <div class="row g-3 mt-1">
+          <div class="col-6 reveal reveal-delay-2">
+            <div style="border-left:3px solid var(--primary-color-2);padding-left:1rem;">
+              <div style="font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--primary-color-1);">200<span style="color:var(--primary-color-2);">+</span></div>
+              <div style="font-size:0.8rem;color:var(--text-secondary);">Product Catalog Items</div>
             </div>
+          </div>
+          <div class="col-6 reveal reveal-delay-3">
+            <div style="border-left:3px solid var(--accent-color);padding-left:1rem;">
+              <div style="font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--primary-color-1);">50<span style="color:var(--accent-color);">+</span></div>
+              <div style="font-size:0.8rem;color:var(--text-secondary);">Countries Served</div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- Images -->
+      <div class="col-lg-7 reveal">
+        <div class="story-image-block">
+          <img class="story-image-main" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Biopharmaceutical laboratory"/>
+          <img class="story-image-accent" src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&q=80" alt="Research team"/>
+          <div class="founded-badge">
+            <span class="year">1999</span>
+            <span class="year-label">Founded</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     4. ANIMATED STATS
+══════════════════════════════════════════════ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-icon"><i class="bi bi-activity"></i></div>
+          <div class="stat-counter"><span class="count" data-target="25">0</span><span class="suffix">+</span></div>
+          <div class="stat-desc">Years in Operation</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
+          <div class="stat-counter"><span class="count" data-target="200">0</span><span class="suffix">+</span></div>
+          <div class="stat-desc">Catalog Products</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-icon"><i class="bi bi-globe2"></i></div>
+          <div class="stat-counter"><span class="count" data-target="50">0</span><span class="suffix">+</span></div>
+          <div class="stat-desc">Countries Served</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-icon"><i class="bi bi-award"></i></div>
+          <div class="stat-counter"><span class="count" data-target="99">0</span><span class="suffix">%</span></div>
+          <div class="stat-desc">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     5. VALUES — Asymmetric Grid
+══════════════════════════════════════════════ -->
+<section class="values-section">
+  <div class="container">
+    <div class="row values-header align-items-end">
+      <div class="col-lg-6">
+        <p class="section-label reveal">What Drives Us</p>
+        <h2 class="values-title reveal reveal-delay-1">Core <strong>Values</strong> that define<br/>every decision we make</h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 reveal reveal-delay-2">
+        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.75;">
+          At American Biosources, our principles aren't framed on walls — they're embedded in every protocol, every partnership, and every product we release to the world.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <!-- Large featured card -->
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="value-card featured h-100">
+          <span class="value-number">01</span>
+          <div class="value-icon-wrap"><i class="bi bi-shield-check"></i></div>
+          <h3 class="value-title">Uncompromising Quality</h3>
+          <p class="value-body">Every biological material leaving our facility undergoes multi-stage QC verification. We hold ourselves to standards that exceed regulatory minimums — because lives depend on it.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="value-card h-100">
+          <span class="value-number">02</span>
+          <div class="value-icon-wrap"><i class="bi bi-lightbulb"></i></div>
+          <h3 class="value-title">Scientific Innovation</h3>
+          <p class="value-body">Continuous investment in R&amp;D keeps our methodologies at the forefront. We evolve alongside the science we serve.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="value-card h-100">
+          <span class="value-number">03</span>
+          <div class="value-icon-wrap"><i class="bi bi-people"></i></div>
+          <h3 class="value-title">Ethical Sourcing</h3>
+          <p class="value-body">Our supply chain adheres to strict ethical and informed-consent frameworks. We believe transparency is the foundation of trust.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="value-card h-100">
+          <span class="value-number">04</span>
+          <div class="value-icon-wrap"><i class="bi bi-arrow-repeat"></i></div>
+          <h3 class="value-title">Regulatory Compliance</h3>
+          <p class="value-body">Full FDA, GMP, and ISO conformance isn't a checkbox — it's a living commitment that shapes daily operations and long-term strategy.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="value-card h-100">
+          <span class="value-number">05</span>
+          <div class="value-icon-wrap"><i class="bi bi-graph-up-arrow"></i></div>
+          <h3 class="value-title">Client Partnership</h3>
+          <p class="value-body">We view our clients as partners in progress — offering custom formulations, technical consultation, and responsive support that go far beyond transactional interactions.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="value-card h-100">
+          <span class="value-number">06</span>
+          <div class="value-icon-wrap"><i class="bi bi-leaf"></i></div>
+          <h3 class="value-title">Sustainability</h3>
+          <p class="value-body">Environmental responsibility is woven into our manufacturing and logistics operations — reducing our footprint while expanding our impact on human health.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     6. MILESTONES TIMELINE
+══════════════════════════════════════════════ -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <p class="section-label reveal">Our Journey</p>
+        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--text-primary);">
+          Milestones that <strong style="font-weight:600;color:var(--primary-color-1);">shaped</strong> our path
+        </h2>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="timeline-track">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1999</div>
+            <h3 class="timeline-heading">Company Founded</h3>
+            <p class="timeline-text">American Biosources Inc. is established with a clear mission: to supply the biopharmaceutical industry with the highest-quality human biological materials available.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2004</div>
+            <h3 class="timeline-heading">First GMP Certification</h3>
+            <p class="timeline-text">Achieved Good Manufacturing Practice certification, signaling our transition from a regional supplier to a compliant, audited biopharmaceutical partner.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2009</div>
+            <h3 class="timeline-heading">International Expansion</h3>
+            <p class="timeline-text">Extended our distribution network to 20+ countries across Europe and Asia, establishing cold-chain logistics that maintain product integrity across hemispheres.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2015</div>
+            <h3 class="timeline-heading">ISO 9001 Accreditation</h3>
+            <p class="timeline-text">Earned ISO 9001 certification, formalizing our quality management system and reinforcing client confidence in our processes at every level.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2020</div>
+            <h3 class="timeline-heading">COVID-19 Response Contribution</h3>
+            <p class="timeline-text">Played a critical role supplying serum and plasma materials to leading vaccine developers during the global pandemic — a proud chapter in our history.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <h3 class="timeline-heading">New R&D Facility Launch</h3>
+            <p class="timeline-text">Opened our advanced biopharmaceutical R&amp;D center, tripling our custom formulation capacity and enabling next-generation cell and gene therapy material development.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sticky visual -->
+      <div class="col-lg-5 offset-lg-1">
+        <div class="timeline-visual reveal">
+          <div class="timeline-visual-inner">
+            <!-- DNA / molecule SVG -->
+            <svg class="tl-molecule" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 10 C60 40 140 70 100 100 C60 130 140 160 100 190 C60 220 140 250 100 290" stroke="white" stroke-width="2"/>
+              <path d="M100 10 C140 40 60 70 100 100 C140 130 60 160 100 190 C140 220 60 250 100 290" stroke="rgba(14,165,233,0.7)" stroke-width="2"/>
+              <circle cx="100" cy="10" r="5" fill="white"/>
+              <circle cx="100" cy="55" r="4" fill="rgba(14,165,233,0.8)"/>
+              <circle cx="100" cy="100" r="5" fill="white"/>
+              <circle cx="100" cy="145" r="4" fill="rgba(220,38,38,0.8)"/>
+              <circle cx="100" cy="190" r="5" fill="white"/>
+              <circle cx="100" cy="235" r="4" fill="rgba(14,165,233,0.8)"/>
+              <circle cx="100" cy="290" r="5" fill="white"/>
+              <line x1="70" y1="38" x2="130" y2="38" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="60" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="70" y1="130" x2="130" y2="130" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="60" y1="163" x2="140" y2="163" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="70" y1="220" x2="130" y2="220" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              <line x1="60" y1="258" x2="140" y2="258" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            </svg>
+
+            <div class="tl-quote">
+              <p>"Science is the engine of our mission — quality is the fuel."</p>
+              <span>Leadership Philosophy &mdash; ABI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     7. LEADERSHIP TEAM
+══════════════════════════════════════════════ -->
+<section class="team-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <p class="section-label reveal">Our Leadership</p>
+        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--text-primary);">
+          The <strong style="font-weight:600;color:var(--primary-color-1);">people</strong> behind<br/> the science
+        </h2>
+      </div>
+      <div class="col-lg-4 offset-lg-1 d-flex align-items-end reveal reveal-delay-2">
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.75;">Hover over a card to learn more about each team member.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO"/>
+              <div class="team-front-info">
+                <div class="team-name">Dr. James Harrington</div>
+                <div class="team-role">Chief Executive Officer</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Dr. James Harrington</div>
+                <div class="team-back-role">Chief Executive Officer</div>
+                <p class="team-bio">With over 28 years in biopharmaceuticals, Dr. Harrington has led ABI through transformative growth — from regional supplier to a globally recognized partner in biological excellence.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="CSO"/>
+              <div class="team-front-info">
+                <div class="team-name">Dr. Priya Mehta</div>
+                <div class="team-role">Chief Scientific Officer</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Dr. Priya Mehta</div>
+                <div class="team-back-role">Chief Scientific Officer</div>
+                <p class="team-bio">A renowned biochemist with a PhD from Johns Hopkins, Dr. Mehta leads our R&amp;D division and holds 12 patents in biological material processing and stabilization.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="COO"/>
+              <div class="team-front-info">
+                <div class="team-name">Robert Chen</div>
+                <div class="team-role">Chief Operations Officer</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Robert Chen</div>
+                <div class="team-back-role">Chief Operations Officer</div>
+                <p class="team-bio">Robert architects the operational excellence that allows ABI to deliver reliably to clients across 50+ countries. His background spans global cold-chain logistics and GMP facility management.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-front">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="QA Director"/>
+              <div class="team-front-info">
+                <div class="team-name">Dr. Lisa Park</div>
+                <div class="team-role">Director, Quality Assurance</div>
+              </div>
+            </div>
+            <div class="team-back">
+              <div>
+                <div class="team-back-name">Dr. Lisa Park</div>
+                <div class="team-back-role">Director, Quality Assurance</div>
+                <p class="team-bio">Dr. Park's rigorous approach to quality governance has maintained ABI's unblemished regulatory record. She has led over 40 successful FDA and international inspections.</p>
+              </div>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     8. CERTIFICATIONS
+══════════════════════════════════════════════ -->
+<section class="certs-section">
+  <div class="container">
+    <div class="row mb-4 align-items-center">
+      <div class="col-md-6">
+        <p class="section-label reveal">Accreditations &amp; Certifications</p>
+        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:var(--text-primary);">
+          Recognized by the world's <strong style="font-weight:600;color:var(--primary-color-1);">leading</strong> regulatory bodies
+        </h2>
+      </div>
+    </div>
+
+    <div class="cert-grid reveal">
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+        <div class="cert-name">FDA Registered</div>
+        <div class="cert-body">U.S. Food &amp; Drug Administration</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+        <div class="cert-name">ISO 9001:2015</div>
+        <div class="cert-body">Quality Management System</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-building-check"></i></div>
+        <div class="cert-name">GMP Certified</div>
+        <div class="cert-body">Good Manufacturing Practice</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-clipboard2-pulse-fill"></i></div>
+        <div class="cert-name">AABB Accredited</div>
+        <div class="cert-body">Blood &amp; Biotherapies</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-globe-americas"></i></div>
+        <div class="cert-name">CE Marked</div>
+        <div class="cert-body">European Conformity</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-shield-fill-check"></i></div>
+        <div class="cert-name">CLIA Certified</div>
+        <div class="cert-body">Clinical Lab Improvement</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-recycle"></i></div>
+        <div class="cert-name">ISO 14001</div>
+        <div class="cert-body">Environmental Management</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon"><i class="bi bi-people-fill"></i></div>
+        <div class="cert-name">IRB Compliant</div>
+        <div class="cert-body">Ethical Human Research Board</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     9. CTA BANNER
+══════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <div class="col-lg-7 reveal">
+        <p class="cta-label">Partner With Us</p>
+        <h2 class="cta-heading">
+          Ready to <em>elevate</em> your<br/>biopharmaceutical supply chain?
+        </h2>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="./contact-us.html" class="btn-cta-primary">Request a Consultation</a>
+          <a href="./products.html" class="btn-cta-outline">View Our Products <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 d-none d-lg-block reveal reveal-delay-2">
+        <!-- Abstract molecule decoration -->
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.2;animation:rotateSlow 20s linear infinite;">
+          <circle cx="100" cy="100" r="80" stroke="white" stroke-width="1.5" stroke-dasharray="8 6"/>
+          <circle cx="100" cy="100" r="50" stroke="rgba(14,165,233,0.8)" stroke-width="1"/>
+          <circle cx="100" cy="20" r="10" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="170" cy="140" r="8" fill="rgba(14,165,233,0.6)"/>
+          <circle cx="30" cy="140" r="8" fill="rgba(220,38,38,0.6)"/>
+          <line x1="100" y1="20" x2="170" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <line x1="170" y1="140" x2="30" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <line x1="30" y1="140" x2="100" y2="20" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer Section Start -->
     <footer class="footer">
         <div class="footer-top">
-            <div class="footer-left fade-in-up">
+            <div class="footer-left">
                 <h2 class="brand">American Biosources Inc.</h2>
                 <p>Leading the future of biopharmaceutical innovation with cutting-edge research and development. 
                 Our commitment to excellence drives us to deliver quality healthcare solutions that improve lives worldwide.
                 </p>
             </div>
 
-            <div class="footer-middle fade-in-up">
+            <div class="footer-middle">
                 <h4>CONTACT US</h4>
                 <p><i class="fas fa-map-marker-alt"></i> 80 Main Street, 5th Floor, West <br> Orange, New Jersey 07052</p>
                 <p><i class="fas fa-envelope"></i> info@ambioinc.com</p>
@@ -252,7 +653,7 @@
                 <p><i class="fas fa-phone"></i> +1-484-544-2673</p>
             </div>
 
-            <div class="footer-right fade-in-up">
+            <div class="footer-right">
                 <h4>FOLLOW US</h4>
                 <div class="socials">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -294,6 +695,72 @@
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
     <!-- Script Sheet -->
-    <script src="./script/main.js"></script>
+    <script src="./script/main.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  /* ─── Scroll reveal ─── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ─── Timeline items staggered reveal ─── */
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 120);
+        tlObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  timelineItems.forEach(el => tlObserver.observe(el));
+
+  /* ─── Animated counters ─── */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(current);
+    }, 16);
+  }
+
+  const counterEls = document.querySelectorAll('.count');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counterEls.forEach(el => counterObserver.observe(el));
+
+  /* ─── Parallax on hero image ─── */
+  const heroRight = document.querySelector('.hero-right img');
+  if (heroRight) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      heroRight.style.transform = `scale(1) translateY(${scrolled * 0.2}px)`;
+    }, { passive: true });
+  }
+</script>
+
 </body>
 </html>

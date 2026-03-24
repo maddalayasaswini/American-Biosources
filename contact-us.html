@@ -27,6 +27,16 @@
 
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" id="vaccines" viewBox="0 0 640 640">
+            <path fill="currentColor" 
+                d="M529.5 47C520.1 37.6 504.9 37.6 495.6 47C486.3 56.4 486.2 71.6 495.6 80.9L510.6 95.9L464.5 142L401.5 79C392.1 69.6 376.9 69.6 367.6 79C358.3 88.4 358.2 103.6 367.6 112.9L374.6 119.9L296.5 198L337.5 239C346.9 248.4 346.9 263.6 337.5 272.9C328.1 282.2 312.9 282.3 303.6 272.9L262.6 231.9L216.5 278L257.5 319C266.9 328.4 266.9 343.6 257.5 352.9C248.1 362.2 232.9 362.3 223.6 352.9L182.6 311.9L144.9 349.6C134.4 360.1 128.5 374.3 128.5 389.2L128.5 478L71.5 535C62.1 544.4 62.1 559.6 71.5 568.9C80.9 578.2 96.1 578.3 105.4 568.9L162.4 511.9L251.2 511.9C266.1 511.9 280.3 506 290.8 495.5L520.5 265.8L527.5 272.8C536.9 282.2 552.1 282.2 561.4 272.8C570.7 263.4 570.8 248.2 561.4 238.9L498.4 175.9L544.5 129.8L559.5 144.8C568.9 154.2 584.1 154.2 593.4 144.8C602.7 135.4 602.8 120.2 593.4 110.9L529.4 46.9z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" id="reload" viewBox="0 0 640 640">
+            <path fill="currentColor" 
+                d="M552 256L408 256C398.3 256 389.5 250.2 385.8 241.2C382.1 232.2 384.1 221.9 391 215L437.7 168.3C362.4 109.7 253.4 115 184.2 184.2C109.2 259.2 109.2 380.7 184.2 455.7C259.2 530.7 380.7 530.7 455.7 455.7C463.9 447.5 471.2 438.8 477.6 429.6C487.7 415.1 507.7 411.6 522.2 421.7C536.7 431.8 540.2 451.8 530.1 466.3C521.6 478.5 511.9 490.1 501 501C401 601 238.9 601 139 501C39.1 401 39 239 139 139C233.3 44.7 382.7 39.4 483.3 122.8L535 71C541.9 64.1 552.2 62.1 561.2 65.8C570.2 69.5 576 78.3 576 88L576 232C576 245.3 565.3 256 552 256z"/>
+        </svg>
+    </svg>
     
     <!-- NavBar Section Start -->
     <nav class="navbar" id="navbar">
@@ -43,7 +53,7 @@
                 <li class="nav-item"><a href="./products.html" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="./services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="./news-podcast.html" class="nav-link">News & Podcast</a></li>
-                <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li>
+                <!-- <li class="nav-item"><a href="./investors.html" class="nav-link">Investers</a></li> -->
                 <li class="nav-item"><a href="./contact-us.html" class="nav-link active">Contact Us</a></li>
             </ul>
 
@@ -84,22 +94,25 @@
                     <input type="email" placeholder="Email ID" required />
                 </div>
                 <div class="form-group">
-                    <select id="serviceDropdown" title="services" required>
-                        <option value="">Select a Service</option>
-                        <option value="Pharmaceuticals">Pharmaceuticals</option>
-                        <option value="Vaccines">Vaccines</option>
-                        <option value="Biologics">Biologics</option>
-                        <option value="Biosimilars">Biosimilars</option>
-                        <option value="Genomic">Genomic Diagnostics</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select id="productDropdown" title="products" required>
-                        <option value="">Select a Product</option>
-                    </select>
+                    <input type="text" placeholder="Subject (Optional)" />
                 </div>
                 <div class="form-group">
                     <textarea rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="captcha d-flex align-items-center justify-content-between mb-2">
+                        <div class="preview px-3 py-2 rounded fw-bold text-primary-blue bg-white shadow-sm" 
+                                                style="min-width: 120px; min-height:40px; text-align: center; letter-spacing: 3px; font-size: 20px;">
+                            <!-- Captcha will be injected here -->
+                        </div>
+                        <button type="button" class="btn btn-outline-light btn-sm captcha-refresh ms-2">
+                            <svg class="vaccines primary-color-500" width="30" height="30">
+                                <use xlink:href="#reload" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <input type="text" id="captcha-input" class="form-control captcha-input" placeholder="Enter the Captcha..." required>
                 </div>
                 <button type="submit" class="submit-btn">
                     <span>Submit</span>
@@ -197,7 +210,8 @@
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 
     <!-- Script Sheet -->
-    <script src="./script/main.js"></script>
+    <script src="./script/contact.js" defer></script>
+    <script src="./script/main.js" defer></script>
     
 </body>
 </html>
