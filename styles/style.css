@@ -137,6 +137,15 @@ body {
 }
 
 /* Section Headers - Enhanced Typography */
+.section-white-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+    color: var(--bg-primary);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
 .section-title {
     font-family: var(--font-heading);
     font-size: clamp(var(--text-5xl), 4vw, var(--text-5xl));
