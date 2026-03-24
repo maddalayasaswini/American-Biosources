@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us — American Biosources Inc.</title>
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <title>Investors | American BioSources Inc.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
 
   <style>
-    /* ─── CSS Variables (inheriting your palette) ─── */
+    /* ─── Root Variables ─────────────────────────────────────────── */
     :root {
       --nav-background: #ffffff;
       --primary-color-1: #1e3a8a;
@@ -22,1537 +18,1502 @@
       --primary-color-2-hover: #ef4444;
       --accent-color: #0ea5e9;
       --footer-color: #1e3a8a;
+      --footer-heading-color: #ffffff;
+      --footer-content-color: #cbd5e1;
+      --footer-bottom-color: #334155;
+      --copyright-background: #ffffff;
       --text-primary: #1f2937;
       --text-secondary: #6b7280;
+      --text-light: #9ca3af;
       --bg-primary: #ffffff;
       --bg-secondary: #f8fafc;
       --border-color: #e5e7eb;
-
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-      --font-ui: 'Syne', sans-serif;
-
+      --shadow-light: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+      --shadow-medium: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+      --shadow-large: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+      --font-primary: 'DM Sans', sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'DM Mono', monospace;
       --transition-fast: 0.15s ease-in-out;
       --transition-normal: 0.3s ease-in-out;
-      --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: 0.5s ease-in-out;
+
+      /* Page-specific palette */
+      --gold: #c9a84c;
+      --gold-light: #e8d5a3;
+      --navy-deep: #0d1f4a;
+      --navy-mid: #1e3a8a;
+      --red-corp: #dc2626;
+      --cream: #faf7f2;
     }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font-body);
-      color: var(--text-primary);
+      font-family: var(--font-primary);
       background: var(--bg-primary);
+      color: var(--text-primary);
       overflow-x: hidden;
     }
 
-    /* ─── SECTION TITLES ─── */
-    .section-label {
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--primary-color-2);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .section-label::before {
-      content: '';
-      display: inline-block;
-      width: 24px;
-      height: 2px;
-      background: var(--primary-color-2);
-    }
-
-    /* ─────────────────────────────────────────────
-       1. HERO — Cinematic Split Panel
-    ───────────────────────────────────────────── */
-    .hero-about {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    /* ─── HERO ───────────────────────────────────────────────────── */
+    .inv-hero {
       position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy-deep);
       overflow: hidden;
     }
 
-    .hero-left {
-      background: var(--primary-color-1);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 5rem 4rem 5rem 5rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Molecular hex-grid background on left panel */
-    .hero-left::before {
+    /* Animated grid background */
+    .inv-hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 20% 80%, rgba(14,165,233,0.18) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(220,38,38,0.12) 0%, transparent 45%);
-      pointer-events: none;
+        linear-gradient(rgba(201,168,76,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridDrift 20s linear infinite;
     }
 
-    .hero-left .hex-grid {
+    @keyframes gridDrift {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(60px); }
+    }
+
+    /* Gradient orbs */
+    .hero-orb {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      opacity: 0.06;
+      border-radius: 50%;
+      filter: blur(80px);
       pointer-events: none;
     }
+    .hero-orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(30,58,138,.5) 0%, transparent 70%);
+      top: -200px; right: -100px;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,.15) 0%, transparent 70%);
+      bottom: -100px; left: 10%;
+      animation: orbFloat 11s ease-in-out infinite reverse;
+    }
+
+    @keyframes orbFloat {
+      0%,100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-30px) scale(1.05); }
+    }
+
+    .inv-hero-content { position: relative; z-index: 2; }
 
     .hero-eyebrow {
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--accent-color);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.3s forwards;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 40px; height: 1px;
+      background: var(--gold);
     }
 
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5vw, 5rem);
+    .hero-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
       font-weight: 300;
       line-height: 1.05;
-      color: #ffffff;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 0.9s 0.5s forwards;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent-color);
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.7);
-      max-width: 420px;
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.7s forwards;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: var(--font-ui);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
       color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.4);
-      padding-bottom: 0.3rem;
-      transition: all var(--transition-normal);
-      opacity: 0;
-      animation: fadeUp 0.8s 0.9s forwards;
-    }
-    .hero-cta:hover { color: var(--accent-color); border-color: var(--accent-color); gap: 1.25rem; }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-right img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%) contrast(1.05);
-      transform: scale(1.05);
-      animation: zoomOut 1.4s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
-    }
-
-    /* Red diagonal slash overlay */
-    .hero-right::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -1px;
-      width: 80px; height: 100%;
-      background: var(--primary-color-1);
-      clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
-      z-index: 3;
-    }
-
-    /* Floating stat card */
-    .hero-stat-card {
-      position: absolute;
-      bottom: 3rem;
-      right: 3rem;
-      background: rgba(255,255,255,0.97);
-      border-left: 4px solid var(--primary-color-2);
-      padding: 1.5rem 2rem;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 1.1s forwards;
-    }
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 600;
-      color: var(--primary-color-1);
-      line-height: 1;
-    }
-    .stat-label {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-top: 0.25rem;
-    }
-
-    /* Scroll indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.4s forwards;
-    }
-    .scroll-line {
-      width: 1px;
-      height: 48px;
-      background: rgba(255,255,255,0.4);
-      position: relative;
-      overflow: hidden;
-    }
-    .scroll-line::after {
-      content: '';
-      position: absolute;
-      top: -100%;
-      left: 0;
-      width: 100%; height: 50%;
-      background: var(--accent-color);
-      animation: scrollDown 1.5s 1.6s infinite;
-    }
-    .scroll-text {
-      font-family: var(--font-ui);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-
-    /* ─────────────────────────────────────────────
-       2. MISSION STRIP — Bold horizontal marquee feel
-    ───────────────────────────────────────────── */
-    .mission-strip {
-      background: var(--primary-color-2);
-      padding: 1.2rem 0;
-      overflow: hidden;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 20s linear infinite;
-      white-space: nowrap;
-    }
-    .marquee-item {
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-shrink: 0;
-    }
-    .marquee-dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      flex-shrink: 0;
-    }
-
-    /* ─────────────────────────────────────────────
-       3. STORY SECTION — editorial timeline layout
-    ───────────────────────────────────────────── */
-    .story-section {
-      padding: 7rem 0;
-      background: var(--bg-secondary);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .story-section::before {
-      content: 'ABI';
-      position: absolute;
-      top: -0.1em;
-      right: -0.05em;
-      font-family: var(--font-display);
-      font-size: 22vw;
-      font-weight: 600;
-      color: rgba(30,58,138,0.04);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .story-content-col {
-      position: relative;
-    }
-
-    .story-tagline {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--text-primary);
-      margin-bottom: 2rem;
-    }
-    .story-tagline strong {
-      font-weight: 600;
-      color: var(--primary-color-1);
-    }
-
-    .story-body {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
       margin-bottom: 1.5rem;
     }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold);
+    }
 
-    .story-image-block {
-      position: relative;
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.65);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
-    .story-image-main {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      display: block;
-    }
-    .story-image-accent {
-      position: absolute;
-      bottom: -2.5rem;
-      left: -2.5rem;
-      width: 52%;
-      height: 200px;
-      object-fit: cover;
-      border: 6px solid #fff;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    }
-    .founded-badge {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      width: 110px; height: 110px;
-      background: var(--primary-color-2);
-      border-radius: 50%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      box-shadow: 0 10px 30px rgba(220,38,38,0.35);
-    }
-    .founded-badge .year {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
+
+    .hero-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-gold {
+      padding: .85rem 2rem;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: var(--font-primary);
       font-weight: 600;
+      font-size: .875rem;
+      letter-spacing: .04em;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      text-decoration: none;
+    }
+    .btn-gold:hover {
+      background: #dbb95e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201,168,76,.3);
+      color: var(--navy-deep);
+    }
+
+    .btn-outline-gold {
+      padding: .85rem 2rem;
+      background: transparent;
       color: #fff;
-      line-height: 1;
+      font-family: var(--font-primary);
+      font-weight: 500;
+      font-size: .875rem;
+      letter-spacing: .04em;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      text-decoration: none;
     }
-    .founded-badge .year-label {
-      font-family: var(--font-ui);
-      font-size: 0.55rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
+    .btn-outline-gold:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
     }
 
-    /* ─────────────────────────────────────────────
-       4. STATS — Animated counters on dark bg
-    ───────────────────────────────────────────── */
-    .stats-section {
-      background: var(--primary-color-1);
-      padding: 5rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .stats-section::before {
-      content: '';
+    /* Hero ticker strip */
+    .stock-ticker {
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(14,165,233,0.12), transparent 60%);
-      pointer-events: none;
+      bottom: 0; left: 0; right: 0;
+      height: 52px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex; align-items: center;
+      overflow: hidden;
+      z-index: 3;
     }
+    .ticker-track {
+      display: flex; gap: 0;
+      animation: tickerScroll 30s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes tickerScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: .6rem;
+      padding: 0 2.5rem;
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      color: rgba(255,255,255,.5);
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .ticker-item .sym { color: var(--gold); font-weight: 500; }
+    .ticker-item .up   { color: #4ade80; }
+    .ticker-item .down { color: #f87171; }
 
-    .stat-item {
+    /* ─── STATS BAND ─────────────────────────────────────────────── */
+    .stats-band {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border-color);
+      padding: 3.5rem 0;
+    }
+    .stat-card {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem;
       position: relative;
     }
-    .stat-item::after {
+    .stat-card::after {
       content: '';
       position: absolute;
       right: 0; top: 20%; bottom: 20%;
       width: 1px;
-      background: rgba(255,255,255,0.1);
+      background: var(--border-color);
     }
-    .stat-item:last-child::after { display: none; }
+    .stat-card:last-child::after { display: none; }
 
-    .stat-counter {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 5vw, 4.5rem);
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.25rem);
       font-weight: 600;
-      color: #fff;
+      color: var(--primary-color-1);
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: .3rem;
     }
-    .stat-counter .suffix {
-      color: var(--accent-color);
+    .stat-number .unit {
+      font-size: .55em;
+      color: var(--gold);
     }
-    .stat-desc {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.05em;
-    }
-    .stat-icon {
-      width: 42px; height: 42px;
-      background: rgba(14,165,233,0.15);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1rem;
-      font-size: 1.2rem;
-      color: var(--accent-color);
+    .stat-label {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
     }
 
-    /* ─────────────────────────────────────────────
-       5. VALUES — Asymmetric card grid
-    ───────────────────────────────────────────── */
-    .values-section {
-      padding: 7rem 0;
-      background: #fff;
+    /* ─── SECTION SHARED ─────────────────────────────────────────── */
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
     }
-
-    .values-header { margin-bottom: 4rem; }
-
-    .values-title {
-      font-family: var(--font-display);
+    .section-title {
+      font-family: var(--font-heading);
       font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
-      color: var(--text-primary);
+      font-weight: 400;
+      color: var(--navy-deep);
+      line-height: 1.2;
     }
-    .values-title strong { font-weight: 600; color: var(--primary-color-1); }
+    .section-title strong { font-weight: 700; }
+    .divider-gold {
+      width: 50px; height: 2px;
+      background: var(--gold);
+      margin: 1.25rem 0 1.5rem;
+    }
+    .section-lead {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
 
-    .value-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
+    /* ─── INVESTMENT THESIS ──────────────────────────────────────── */
+    .thesis-section { padding: 6rem 0; background: var(--bg-primary); }
+
+    .thesis-pillar {
       padding: 2.5rem 2rem;
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--gold);
+      background: var(--bg-primary);
+      transition: all var(--transition-normal);
+      height: 100%;
+    }
+    .thesis-pillar:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-large);
+      border-top-color: var(--primary-color-1);
+    }
+    .pillar-icon {
+      width: 52px; height: 52px;
+      background: var(--navy-deep);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      border-radius: 2px;
+    }
+    .pillar-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: .75rem;
+    }
+    .pillar-body {
+      font-size: .9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ─── FINANCIAL HIGHLIGHTS ───────────────────────────────────── */
+    .financials-section {
+      padding: 6rem 0;
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+    }
+    .financials-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .financials-section .section-title { color: #fff; }
+    .financials-section .section-lead { color: rgba(255,255,255,.55); }
+
+    .fin-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px;
+      padding: 2rem;
+      text-align: center;
+      transition: all var(--transition-normal);
+      cursor: default;
+    }
+    .fin-card:hover {
+      background: rgba(255,255,255,.08);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    .fin-card-value {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: .25rem;
+    }
+    .fin-card-label {
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: .75rem;
+    }
+    .fin-card-change {
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      padding: .2rem .6rem;
+      border-radius: 20px;
+      display: inline-flex; align-items: center; gap: .3rem;
+    }
+    .fin-card-change.pos { background: rgba(74,222,128,.15); color: #4ade80; }
+    .fin-card-change.neg { background: rgba(248,113,113,.15); color: #f87171; }
+
+    /* Bar chart */
+    .mini-chart { margin-top: 1.5rem; }
+    .chart-bar-wrap {
+      display: flex; align-items: flex-end; gap: 6px;
+      height: 60px;
+      justify-content: center;
+    }
+    .chart-bar {
+      width: 18px;
+      background: rgba(201,168,76,.3);
+      border-radius: 2px 2px 0 0;
+      transition: all var(--transition-slow);
+      position: relative;
+    }
+    .chart-bar.active, .chart-bar:hover { background: var(--gold); }
+    .chart-years {
+      display: flex; justify-content: center; gap: 6px;
+      margin-top: .4rem;
+    }
+    .chart-year {
+      width: 18px;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: rgba(255,255,255,.3);
+      text-align: center;
+    }
+
+    /* ─── PIPELINE TIMELINE ──────────────────────────────────────── */
+    .pipeline-section { padding: 6rem 0; background: var(--cream); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--navy-mid), var(--gold));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all .5s ease;
+    }
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -2.85rem;
+      top: .3rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: var(--cream);
+      z-index: 1;
+    }
+    .timeline-dot.active {
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,168,76,.2);
+    }
+    .timeline-phase {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .3rem;
+    }
+    .timeline-name {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: .4rem;
+    }
+    .timeline-desc {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .phase-badge {
+      display: inline-block;
+      padding: .2rem .7rem;
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .06em;
+      border-radius: 2px;
+      margin-bottom: .5rem;
+    }
+    .phase-1 { background: rgba(201,168,76,.15); color: var(--gold); border: 1px solid var(--gold); }
+    .phase-2 { background: rgba(30,58,138,.1); color: var(--navy-mid); border: 1px solid var(--navy-mid); }
+    .phase-3 { background: rgba(220,38,38,.1); color: var(--red-corp); border: 1px solid var(--red-corp); }
+    .phase-market { background: rgba(74,222,128,.1); color: #16a34a; border: 1px solid #16a34a; }
+
+    /* ─── LEADERSHIP GRID ────────────────────────────────────────── */
+    .leadership-section { padding: 6rem 0; background: var(--bg-primary); }
+
+    .leader-card {
+      border: 1px solid var(--border-color);
+      padding: 2rem;
       height: 100%;
       position: relative;
       overflow: hidden;
-      transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+      transition: all var(--transition-normal);
     }
-    .value-card::before {
+    .leader-card::before {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--primary-color-2);
+      background: linear-gradient(90deg, var(--gold), var(--navy-mid));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform var(--transition-normal);
     }
-    .value-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(30,58,138,0.12); }
-    .value-card:hover::before { transform: scaleX(1); }
+    .leader-card:hover { box-shadow: var(--shadow-large); transform: translateY(-4px); }
+    .leader-card:hover::before { transform: scaleX(1); }
 
-    .value-number {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 600;
-      color: rgba(30,58,138,0.07);
-      line-height: 1;
-      position: absolute;
-      top: 1rem; right: 1.5rem;
-    }
-
-    .value-icon-wrap {
-      width: 52px; height: 52px;
-      background: rgba(30,58,138,0.08);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
-      color: var(--primary-color-1);
-      transition: background var(--transition-normal);
-    }
-    .value-card:hover .value-icon-wrap {
-      background: var(--primary-color-1);
-      color: #fff;
-    }
-
-    .value-title {
-      font-family: var(--font-ui);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-    }
-    .value-body {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-    }
-
-    /* Featured (large) value card */
-    .value-card.featured {
-      background: var(--primary-color-1);
-      border-color: var(--primary-color-1);
-    }
-    .value-card.featured .value-number { color: rgba(255,255,255,0.06); }
-    .value-card.featured .value-icon-wrap { background: rgba(255,255,255,0.12); color: #fff; }
-    .value-card.featured .value-title { color: #fff; }
-    .value-card.featured .value-body { color: rgba(255,255,255,0.65); }
-    .value-card.featured::before { background: var(--accent-color); }
-    .value-card.featured:hover { box-shadow: 0 20px 50px rgba(30,58,138,0.35); }
-
-    /* ─────────────────────────────────────────────
-       6. TIMELINE — Vertical milestone track
-    ───────────────────────────────────────────── */
-    .timeline-section {
-      padding: 7rem 0;
-      background: var(--bg-secondary);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .timeline-track {
-      position: relative;
-      padding-left: 2.5rem;
-    }
-    .timeline-track::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--primary-color-1), var(--accent-color), var(--primary-color-2));
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-bottom: 3rem;
-      opacity: 0;
-      transform: translateX(-20px);
-      transition: all 0.6s cubic-bezier(0.16,1,0.3,1);
-    }
-    .timeline-item.visible { opacity: 1; transform: translateX(0); }
-
-    .timeline-dot {
-      position: absolute;
-      left: -2.95rem;
-      top: 0.3rem;
-      width: 14px; height: 14px;
+    .leader-avatar {
+      width: 64px; height: 64px;
+      background: var(--navy-deep);
       border-radius: 50%;
-      background: var(--primary-color-1);
-      border: 3px solid var(--bg-secondary);
-      box-shadow: 0 0 0 2px var(--primary-color-1);
-      transition: transform var(--transition-normal), background var(--transition-normal);
-    }
-    .timeline-item:hover .timeline-dot {
-      transform: scale(1.4);
-      background: var(--primary-color-2);
-      box-shadow: 0 0 0 2px var(--primary-color-2);
-    }
-
-    .timeline-year {
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--primary-color-2);
-      margin-bottom: 0.4rem;
-    }
-    .timeline-heading {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-    }
-    .timeline-text {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 440px;
-    }
-
-    .timeline-visual {
-      position: sticky;
-      top: 7rem;
-    }
-    .timeline-visual-inner {
-      background: var(--primary-color-1);
-      aspect-ratio: 4/5;
       display: flex; align-items: center; justify-content: center;
-      position: relative;
-      overflow: hidden;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
     }
-    .tl-molecule {
-      width: 60%;
-      opacity: 0.15;
+    .leader-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: .2rem;
     }
-    .tl-quote {
-      position: absolute;
-      bottom: 2.5rem; left: 2.5rem; right: 2.5rem;
-    }
-    .tl-quote p {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-style: italic;
-      color: #fff;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    .tl-quote span {
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
+    .leader-role {
+      font-size: .78rem;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      color: var(--accent-color);
+      color: var(--gold);
+      margin-bottom: .75rem;
+    }
+    .leader-bio {
+      font-size: .85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
     }
 
-    /* ─────────────────────────────────────────────
-       7. LEADERSHIP — Card hover flip effect
-    ───────────────────────────────────────────── */
-    .team-section {
-      padding: 7rem 0;
-      background: #fff;
-    }
+    /* ─── REPORTS / FILINGS ──────────────────────────────────────── */
+    .reports-section { padding: 6rem 0; background: var(--bg-secondary); }
 
-    .team-card {
-      perspective: 1000px;
-      height: 420px;
-      cursor: pointer;
-    }
-    .team-card-inner {
-      position: relative;
-      width: 100%; height: 100%;
-      transform-style: preserve-3d;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .team-card:hover .team-card-inner { transform: rotateY(180deg); }
-
-    .team-front, .team-back {
-      position: absolute;
-      inset: 0;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-
-    .team-front {
-      background: var(--bg-secondary);
-      overflow: hidden;
-    }
-    .team-front img {
-      width: 100%; height: 72%;
-      object-fit: cover;
-      object-position: top;
-      filter: grayscale(25%);
-      transition: filter var(--transition-slow);
-    }
-    .team-card:hover .team-front img { filter: grayscale(0%); }
-    .team-front-info {
+    .report-row {
+      display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem 1.5rem;
-      border-left: 3px solid var(--primary-color-2);
-    }
-    .team-name {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    .team-role {
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--primary-color-2);
-      margin-top: 0.2rem;
-    }
-
-    .team-back {
-      background: var(--primary-color-1);
-      transform: rotateY(180deg);
-      padding: 2.5rem 2rem;
-      display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .team-back-name {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: #fff;
-      margin-bottom: 0.25rem;
-    }
-    .team-back-role {
-      font-family: var(--font-ui);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      margin-bottom: 1.5rem;
-    }
-    .team-bio {
-      font-size: 0.85rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.7);
-      flex: 1;
-    }
-    .team-social {
-      display: flex; gap: 0.75rem; margin-top: 1.5rem;
-    }
-    .team-social a {
-      width: 36px; height: 36px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; text-decoration: none;
-      font-size: 0.85rem;
-      transition: all var(--transition-normal);
-    }
-    .team-social a:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
-
-    /* ─────────────────────────────────────────────
-       8. CERTIFICATIONS — Horizontal scroll strip
-    ───────────────────────────────────────────── */
-    .certs-section {
-      padding: 5rem 0;
-      background: var(--bg-secondary);
-      overflow: hidden;
-    }
-
-    .cert-grid {
-      display: flex;
-      gap: 1.5rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scrollbar-width: none;
-    }
-    .cert-grid::-webkit-scrollbar { display: none; }
-
-    .cert-badge {
-      flex-shrink: 0;
-      width: 180px;
-      background: #fff;
+      background: var(--bg-primary);
       border: 1px solid var(--border-color);
-      padding: 1.75rem 1.5rem;
-      text-align: center;
+      border-left: 3px solid transparent;
+      margin-bottom: .75rem;
       transition: all var(--transition-normal);
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .cert-badge:hover {
-      border-color: var(--primary-color-1);
-      box-shadow: 0 8px 24px rgba(30,58,138,0.1);
-      transform: translateY(-4px);
+    .report-row:hover {
+      border-left-color: var(--gold);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-medium);
     }
-    .cert-icon {
-      font-size: 2rem;
-      color: var(--primary-color-1);
-      margin-bottom: 0.75rem;
+    .report-title {
+      font-weight: 500;
+      font-size: .95rem;
+      color: var(--navy-deep);
     }
-    .cert-name {
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-primary);
+    .report-meta {
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      color: var(--text-light);
+      margin-top: .15rem;
     }
-    .cert-body {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      margin-top: 0.3rem;
+    .report-type {
+      display: inline-block;
+      padding: .2rem .7rem;
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      border-radius: 2px;
+      background: rgba(30,58,138,.08);
+      color: var(--navy-mid);
+      border: 1px solid rgba(30,58,138,.15);
+    }
+    .btn-download {
+      padding: .5rem 1.2rem;
+      background: transparent;
+      color: var(--navy-mid);
+      border: 1px solid var(--navy-mid);
+      font-size: .8rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-download:hover {
+      background: var(--navy-mid);
+      color: #fff;
     }
 
-    /* ─────────────────────────────────────────────
-       9. CTA BANNER — Bold diagonal
-    ───────────────────────────────────────────── */
-    .cta-banner {
-      background: var(--primary-color-1);
-      padding: 5rem 0;
+    /* ─── ESG / GOVERNANCE ───────────────────────────────────────── */
+    .esg-section { padding: 6rem 0; background: var(--bg-primary); }
+
+    .esg-card {
+      padding: 2.5rem 2rem;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      border-bottom: 3px solid var(--border-color);
+      height: 100%;
+      transition: all var(--transition-normal);
       position: relative;
       overflow: hidden;
     }
-    .cta-banner::before {
+    .esg-card::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 50%, rgba(14,165,233,0.2), transparent 55%);
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      transition: all var(--transition-normal);
     }
-    .cta-banner::after {
-      content: '';
-      position: absolute;
-      right: -5%;
-      top: -20%;
-      width: 55%;
-      height: 140%;
-      background: var(--primary-color-2);
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-      opacity: 0.12;
-    }
+    .esg-card.env::after  { background: #4ade80; }
+    .esg-card.soc::after  { background: var(--accent-color); }
+    .esg-card.gov::after  { background: var(--gold); }
 
-    .cta-label {
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent-color);
+    .esg-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-large); }
+
+    .esg-icon {
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
-    .cta-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 300;
-      color: #fff;
-      line-height: 1.15;
-      margin-bottom: 2rem;
-    }
-    .cta-heading em { font-style: italic; color: var(--accent-color); }
+    .esg-card.env  .esg-icon { color: #16a34a; }
+    .esg-card.soc  .esg-icon { color: var(--accent-color); }
+    .esg-card.gov  .esg-icon { color: var(--gold); }
 
-    .btn-cta-primary {
-      font-family: var(--font-ui);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: #fff;
-      color: var(--primary-color-1);
-      border: 2px solid #fff;
-      padding: 0.85rem 2.2rem;
-      text-decoration: none;
-      display: inline-block;
+    .esg-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: .75rem;
+    }
+    .esg-body {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .esg-metric {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .8rem;
+      color: var(--text-secondary);
+      margin-bottom: .4rem;
+    }
+    .esg-metric i { color: var(--gold); font-size: .75rem; }
+
+    /* ─── CONTACT / IR CONTACT ───────────────────────────────────── */
+    .contact-section {
+      padding: 6rem 0;
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-section::before {
+      content: '"Science at the Core of Every Investment"';
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 6vw, 7rem);
+      font-style: italic;
+      color: rgba(255,255,255,.03);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .contact-section .section-title { color: #fff; }
+    .contact-section .section-lead { color: rgba(255,255,255,.55); }
+
+    .ir-contact-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 2rem;
+      border-radius: 4px;
       transition: all var(--transition-normal);
     }
-    .btn-cta-primary:hover {
-      background: transparent;
-      color: #fff;
+    .ir-contact-card:hover {
+      background: rgba(255,255,255,.09);
+      border-color: var(--gold);
     }
-
-    .btn-cta-outline {
-      font-family: var(--font-ui);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
+    .ir-contact-label {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      background: transparent;
-      color: rgba(255,255,255,0.8);
-      border: 2px solid rgba(255,255,255,0.3);
-      padding: 0.85rem 2.2rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: all var(--transition-normal);
+      color: var(--gold);
+      margin-bottom: .4rem;
     }
-    .btn-cta-outline:hover {
-      border-color: #fff;
+    .ir-contact-value {
+      font-size: 1rem;
+      font-weight: 500;
       color: #fff;
     }
+    .ir-contact-value a { color: var(--gold-light); text-decoration: none; }
+    .ir-contact-value a:hover { color: var(--gold); text-decoration: underline; }
 
-    /* ─────────────────────────────────────────────
-       SCROLL ANIMATIONS
-    ───────────────────────────────────────────── */
-    .reveal {
+    /* Newsletter form */
+    .subscribe-form {
+      display: flex; gap: .75rem; flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .subscribe-input {
+      flex: 1;
+      min-width: 220px;
+      padding: .85rem 1.25rem;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      color: #fff;
+      font-family: var(--font-primary);
+      font-size: .9rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+    .subscribe-input::placeholder { color: rgba(255,255,255,.35); }
+    .subscribe-input:focus { border-color: var(--gold); }
+
+    /* ─── SCROLL ANIMATIONS ──────────────────────────────────────── */
+    .fade-up {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      transition: opacity .6s ease, transform .6s ease;
     }
-    .reveal.visible {
+    .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    .fade-up.delay-1 { transition-delay: .1s; }
+    .fade-up.delay-2 { transition-delay: .2s; }
+    .fade-up.delay-3 { transition-delay: .3s; }
+    .fade-up.delay-4 { transition-delay: .4s; }
 
-    /* ─────────────────────────────────────────────
-       KEYFRAMES
-    ───────────────────────────────────────────── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes zoomOut {
-      to { transform: scale(1); }
-    }
-    @keyframes scrollDown {
-      0%   { top: -100%; }
-      100% { top: 200%; }
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-    @keyframes counterPulse {
-      0%, 100% { transform: scale(1); }
-      50%       { transform: scale(1.04); }
-    }
-    @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+    /* ─── RESPONSIVE TWEAKS ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .stat-card::after { display: none; }
+      .timeline { padding-left: 1.75rem; }
+      .timeline-dot { left: -2.1rem; }
     }
 
-    /* ─────────────────────────────────────────────
-       RESPONSIVE
-    ───────────────────────────────────────────── */
-    @media (max-width: 991.98px) {
-      .hero-about { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 7rem 2rem 4rem; min-height: 70vh; }
-      .hero-right { height: 50vw; }
-      .hero-right::after { display: none; }
-      .hero-stat-card { right: 1.5rem; bottom: 1.5rem; padding: 1rem 1.5rem; }
-      .stat-number { font-size: 2.2rem; }
-      .scroll-indicator { display: none; }
-      .story-image-accent { display: none; }
-      .timeline-visual { display: none; }
-      .team-card { height: 360px; }
-    }
-
-    @media (max-width: 575.98px) {
-      .hero-left { padding: 6rem 1.5rem 3rem; }
-      .values-section, .story-section, .team-section, .timeline-section { padding: 4rem 0; }
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
+    /* ─── SCROLLBAR ──────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg-secondary); }
-    ::-webkit-scrollbar-thumb { background: var(--primary-color-1); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════
-     1. CINEMATIC HERO
-══════════════════════════════════════════════ -->
-<section class="hero-about">
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════════ -->
+<section class="inv-hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
 
-  <!-- Left panel -->
-  <div class="hero-left">
-    <!-- SVG hex-grid watermark -->
-    <svg class="hex-grid" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <defs>
-        <pattern id="hexPat" x="0" y="0" width="60" height="70" patternUnits="userSpaceOnUse">
-          <polygon points="30,5 55,17.5 55,52.5 30,65 5,52.5 5,17.5" stroke="white" stroke-width="1" fill="none"/>
-        </pattern>
-      </defs>
-      <rect width="600" height="600" fill="url(#hexPat)"/>
-    </svg>
-
-    <p class="hero-eyebrow">American Biosources Inc. &mdash; About Us</p>
-    <h1 class="hero-title">
-      Advancing Life<br/>
-      Through <em>Science</em><br/>
-      &amp; Innovation
-    </h1>
-    <p class="hero-desc">
-      A leading force in biopharmaceutical research and supply, delivering high-purity biological materials and innovative solutions that power the medicines of tomorrow.
-    </p>
-    <a href="#story" class="hero-cta">
-      Discover Our Story <i class="bi bi-arrow-right"></i>
-    </a>
-  </div>
-
-  <!-- Right panel -->
-  <div class="hero-right">
-    <!-- Using a high-quality Unsplash placeholder — replace with your own -->
-    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80" alt="Laboratory research at American Biosources"/>
-
-    <!-- Floating stat card -->
-    <div class="hero-stat-card">
-      <div class="stat-number">25<span style="color:var(--primary-color-2);font-size:2rem;">+</span></div>
-      <div class="stat-label">Years of Biopharmaceutical Excellence</div>
-    </div>
-  </div>
-
-  <!-- Scroll indicator (visible on desktop) -->
-  <div class="scroll-indicator">
-    <div class="scroll-line"></div>
-    <span class="scroll-text">Scroll</span>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     2. MARQUEE STRIP
-══════════════════════════════════════════════ -->
-<div class="mission-strip" aria-hidden="true">
-  <div class="marquee-track">
-    <!-- Duplicate items so it looks infinite -->
-    <script>
-      const tags = ['Biopharmaceutical Innovation','GMP Certified','FDA Compliant','ISO 9001 Accredited','Human-Grade Materials','Cutting-Edge R&D','Trusted Globally','Precision Biology'];
-      const track = document.currentScript.parentElement;
-      [...tags, ...tags].forEach(t => {
-        track.insertAdjacentHTML('beforeend', `<span class="marquee-item"><span class="marquee-dot"></span>${t}</span>`);
-      });
-    </script>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════
-     3. OUR STORY
-══════════════════════════════════════════════ -->
-<section class="story-section" id="story">
-  <div class="container">
-    <div class="row align-items-center g-5">
-
-      <!-- Text -->
-      <div class="col-lg-5 story-content-col">
-        <p class="section-label reveal">Our Story</p>
-        <h2 class="story-tagline reveal reveal-delay-1">
-          Built on a <strong>commitment</strong> to biological excellence
-        </h2>
-        <p class="story-body reveal reveal-delay-2">
-          Founded in the United States, American Biosources Inc. emerged from a shared vision: to bridge the gap between cutting-edge science and reliable pharmaceutical supply chains. From our earliest days sourcing premium human-derived biological materials, we have remained steadfast in our pursuit of purity, traceability, and scientific integrity.
-        </p>
-        <p class="story-body reveal reveal-delay-3">
-          Today, our state-of-the-art facilities operate under rigorous regulatory frameworks — serving global biotech firms, research institutions, and pharmaceutical companies who depend on materials that meet the highest quality standards. Every vial, every sample, every shipment carries the promise of American Biosources.
-        </p>
-
-        <div class="row g-3 mt-1">
-          <div class="col-6 reveal reveal-delay-2">
-            <div style="border-left:3px solid var(--primary-color-2);padding-left:1rem;">
-              <div style="font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--primary-color-1);">200<span style="color:var(--primary-color-2);">+</span></div>
-              <div style="font-size:0.8rem;color:var(--text-secondary);">Product Catalog Items</div>
-            </div>
-          </div>
-          <div class="col-6 reveal reveal-delay-3">
-            <div style="border-left:3px solid var(--accent-color);padding-left:1rem;">
-              <div style="font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--primary-color-1);">50<span style="color:var(--accent-color);">+</span></div>
-              <div style="font-size:0.8rem;color:var(--text-secondary);">Countries Served</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Images -->
-      <div class="col-lg-7 reveal">
-        <div class="story-image-block">
-          <img class="story-image-main" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Biopharmaceutical laboratory"/>
-          <img class="story-image-accent" src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&q=80" alt="Research team"/>
-          <div class="founded-badge">
-            <span class="year">1999</span>
-            <span class="year-label">Founded</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     4. ANIMATED STATS
-══════════════════════════════════════════════ -->
-<section class="stats-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 col-md-3">
-        <div class="stat-item reveal">
-          <div class="stat-icon"><i class="bi bi-activity"></i></div>
-          <div class="stat-counter"><span class="count" data-target="25">0</span><span class="suffix">+</span></div>
-          <div class="stat-desc">Years in Operation</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-item reveal reveal-delay-1">
-          <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
-          <div class="stat-counter"><span class="count" data-target="200">0</span><span class="suffix">+</span></div>
-          <div class="stat-desc">Catalog Products</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-item reveal reveal-delay-2">
-          <div class="stat-icon"><i class="bi bi-globe2"></i></div>
-          <div class="stat-counter"><span class="count" data-target="50">0</span><span class="suffix">+</span></div>
-          <div class="stat-desc">Countries Served</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-item reveal reveal-delay-3">
-          <div class="stat-icon"><i class="bi bi-award"></i></div>
-          <div class="stat-counter"><span class="count" data-target="99">0</span><span class="suffix">%</span></div>
-          <div class="stat-desc">Client Satisfaction</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     5. VALUES — Asymmetric Grid
-══════════════════════════════════════════════ -->
-<section class="values-section">
-  <div class="container">
-    <div class="row values-header align-items-end">
-      <div class="col-lg-6">
-        <p class="section-label reveal">What Drives Us</p>
-        <h2 class="values-title reveal reveal-delay-1">Core <strong>Values</strong> that define<br/>every decision we make</h2>
-      </div>
-      <div class="col-lg-5 offset-lg-1 reveal reveal-delay-2">
-        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.75;">
-          At American Biosources, our principles aren't framed on walls — they're embedded in every protocol, every partnership, and every product we release to the world.
-        </p>
-      </div>
-    </div>
-
-    <div class="row g-3">
-      <!-- Large featured card -->
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="value-card featured h-100">
-          <span class="value-number">01</span>
-          <div class="value-icon-wrap"><i class="bi bi-shield-check"></i></div>
-          <h3 class="value-title">Uncompromising Quality</h3>
-          <p class="value-body">Every biological material leaving our facility undergoes multi-stage QC verification. We hold ourselves to standards that exceed regulatory minimums — because lives depend on it.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
-        <div class="value-card h-100">
-          <span class="value-number">02</span>
-          <div class="value-icon-wrap"><i class="bi bi-lightbulb"></i></div>
-          <h3 class="value-title">Scientific Innovation</h3>
-          <p class="value-body">Continuous investment in R&amp;D keeps our methodologies at the forefront. We evolve alongside the science we serve.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
-        <div class="value-card h-100">
-          <span class="value-number">03</span>
-          <div class="value-icon-wrap"><i class="bi bi-people"></i></div>
-          <h3 class="value-title">Ethical Sourcing</h3>
-          <p class="value-body">Our supply chain adheres to strict ethical and informed-consent frameworks. We believe transparency is the foundation of trust.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
-        <div class="value-card h-100">
-          <span class="value-number">04</span>
-          <div class="value-icon-wrap"><i class="bi bi-arrow-repeat"></i></div>
-          <h3 class="value-title">Regulatory Compliance</h3>
-          <p class="value-body">Full FDA, GMP, and ISO conformance isn't a checkbox — it's a living commitment that shapes daily operations and long-term strategy.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
-        <div class="value-card h-100">
-          <span class="value-number">05</span>
-          <div class="value-icon-wrap"><i class="bi bi-graph-up-arrow"></i></div>
-          <h3 class="value-title">Client Partnership</h3>
-          <p class="value-body">We view our clients as partners in progress — offering custom formulations, technical consultation, and responsive support that go far beyond transactional interactions.</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
-        <div class="value-card h-100">
-          <span class="value-number">06</span>
-          <div class="value-icon-wrap"><i class="bi bi-leaf"></i></div>
-          <h3 class="value-title">Sustainability</h3>
-          <p class="value-body">Environmental responsibility is woven into our manufacturing and logistics operations — reducing our footprint while expanding our impact on human health.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     6. MILESTONES TIMELINE
-══════════════════════════════════════════════ -->
-<section class="timeline-section">
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-lg-6">
-        <p class="section-label reveal">Our Journey</p>
-        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--text-primary);">
-          Milestones that <strong style="font-weight:600;color:var(--primary-color-1);">shaped</strong> our path
-        </h2>
-      </div>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-lg-6">
-        <div class="timeline-track">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">1999</div>
-            <h3 class="timeline-heading">Company Founded</h3>
-            <p class="timeline-text">American Biosources Inc. is established with a clear mission: to supply the biopharmaceutical industry with the highest-quality human biological materials available.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2004</div>
-            <h3 class="timeline-heading">First GMP Certification</h3>
-            <p class="timeline-text">Achieved Good Manufacturing Practice certification, signaling our transition from a regional supplier to a compliant, audited biopharmaceutical partner.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2009</div>
-            <h3 class="timeline-heading">International Expansion</h3>
-            <p class="timeline-text">Extended our distribution network to 20+ countries across Europe and Asia, establishing cold-chain logistics that maintain product integrity across hemispheres.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2015</div>
-            <h3 class="timeline-heading">ISO 9001 Accreditation</h3>
-            <p class="timeline-text">Earned ISO 9001 certification, formalizing our quality management system and reinforcing client confidence in our processes at every level.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2020</div>
-            <h3 class="timeline-heading">COVID-19 Response Contribution</h3>
-            <p class="timeline-text">Played a critical role supplying serum and plasma materials to leading vaccine developers during the global pandemic — a proud chapter in our history.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2024</div>
-            <h3 class="timeline-heading">New R&D Facility Launch</h3>
-            <p class="timeline-text">Opened our advanced biopharmaceutical R&amp;D center, tripling our custom formulation capacity and enabling next-generation cell and gene therapy material development.</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Sticky visual -->
-      <div class="col-lg-5 offset-lg-1">
-        <div class="timeline-visual reveal">
-          <div class="timeline-visual-inner">
-            <!-- DNA / molecule SVG -->
-            <svg class="tl-molecule" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M100 10 C60 40 140 70 100 100 C60 130 140 160 100 190 C60 220 140 250 100 290" stroke="white" stroke-width="2"/>
-              <path d="M100 10 C140 40 60 70 100 100 C140 130 60 160 100 190 C140 220 60 250 100 290" stroke="rgba(14,165,233,0.7)" stroke-width="2"/>
-              <circle cx="100" cy="10" r="5" fill="white"/>
-              <circle cx="100" cy="55" r="4" fill="rgba(14,165,233,0.8)"/>
-              <circle cx="100" cy="100" r="5" fill="white"/>
-              <circle cx="100" cy="145" r="4" fill="rgba(220,38,38,0.8)"/>
-              <circle cx="100" cy="190" r="5" fill="white"/>
-              <circle cx="100" cy="235" r="4" fill="rgba(14,165,233,0.8)"/>
-              <circle cx="100" cy="290" r="5" fill="white"/>
-              <line x1="70" y1="38" x2="130" y2="38" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-              <line x1="60" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-              <line x1="70" y1="130" x2="130" y2="130" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-              <line x1="60" y1="163" x2="140" y2="163" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-              <line x1="70" y1="220" x2="130" y2="220" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-              <line x1="60" y1="258" x2="140" y2="258" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-            </svg>
-
-            <div class="tl-quote">
-              <p>"Science is the engine of our mission — quality is the fuel."</p>
-              <span>Leadership Philosophy &mdash; ABI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     7. LEADERSHIP TEAM
-══════════════════════════════════════════════ -->
-<section class="team-section">
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-lg-7">
-        <p class="section-label reveal">Our Leadership</p>
-        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--text-primary);">
-          The <strong style="font-weight:600;color:var(--primary-color-1);">people</strong> behind<br/> the science
-        </h2>
-      </div>
-      <div class="col-lg-4 offset-lg-1 d-flex align-items-end reveal reveal-delay-2">
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.75;">Hover over a card to learn more about each team member.</p>
-      </div>
-    </div>
-
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-6 col-lg-3 reveal">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-front">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO"/>
-              <div class="team-front-info">
-                <div class="team-name">Dr. James Harrington</div>
-                <div class="team-role">Chief Executive Officer</div>
-              </div>
-            </div>
-            <div class="team-back">
-              <div>
-                <div class="team-back-name">Dr. James Harrington</div>
-                <div class="team-back-role">Chief Executive Officer</div>
-                <p class="team-bio">With over 28 years in biopharmaceuticals, Dr. Harrington has led ABI through transformative growth — from regional supplier to a globally recognized partner in biological excellence.</p>
-              </div>
-              <div class="team-social">
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-front">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="CSO"/>
-              <div class="team-front-info">
-                <div class="team-name">Dr. Priya Mehta</div>
-                <div class="team-role">Chief Scientific Officer</div>
-              </div>
-            </div>
-            <div class="team-back">
-              <div>
-                <div class="team-back-name">Dr. Priya Mehta</div>
-                <div class="team-back-role">Chief Scientific Officer</div>
-                <p class="team-bio">A renowned biochemist with a PhD from Johns Hopkins, Dr. Mehta leads our R&amp;D division and holds 12 patents in biological material processing and stabilization.</p>
-              </div>
-              <div class="team-social">
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-front">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="COO"/>
-              <div class="team-front-info">
-                <div class="team-name">Robert Chen</div>
-                <div class="team-role">Chief Operations Officer</div>
-              </div>
-            </div>
-            <div class="team-back">
-              <div>
-                <div class="team-back-name">Robert Chen</div>
-                <div class="team-back-role">Chief Operations Officer</div>
-                <p class="team-bio">Robert architects the operational excellence that allows ABI to deliver reliably to clients across 50+ countries. His background spans global cold-chain logistics and GMP facility management.</p>
-              </div>
-              <div class="team-social">
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-front">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="QA Director"/>
-              <div class="team-front-info">
-                <div class="team-name">Dr. Lisa Park</div>
-                <div class="team-role">Director, Quality Assurance</div>
-              </div>
-            </div>
-            <div class="team-back">
-              <div>
-                <div class="team-back-name">Dr. Lisa Park</div>
-                <div class="team-back-role">Director, Quality Assurance</div>
-                <p class="team-bio">Dr. Park's rigorous approach to quality governance has maintained ABI's unblemished regulatory record. She has led over 40 successful FDA and international inspections.</p>
-              </div>
-              <div class="team-social">
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     8. CERTIFICATIONS
-══════════════════════════════════════════════ -->
-<section class="certs-section">
-  <div class="container">
-    <div class="row mb-4 align-items-center">
-      <div class="col-md-6">
-        <p class="section-label reveal">Accreditations &amp; Certifications</p>
-        <h2 class="reveal reveal-delay-1" style="font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;color:var(--text-primary);">
-          Recognized by the world's <strong style="font-weight:600;color:var(--primary-color-1);">leading</strong> regulatory bodies
-        </h2>
-      </div>
-    </div>
-
-    <div class="cert-grid reveal">
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
-        <div class="cert-name">FDA Registered</div>
-        <div class="cert-body">U.S. Food &amp; Drug Administration</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
-        <div class="cert-name">ISO 9001:2015</div>
-        <div class="cert-body">Quality Management System</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-building-check"></i></div>
-        <div class="cert-name">GMP Certified</div>
-        <div class="cert-body">Good Manufacturing Practice</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-clipboard2-pulse-fill"></i></div>
-        <div class="cert-name">AABB Accredited</div>
-        <div class="cert-body">Blood &amp; Biotherapies</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-globe-americas"></i></div>
-        <div class="cert-name">CE Marked</div>
-        <div class="cert-body">European Conformity</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-shield-fill-check"></i></div>
-        <div class="cert-name">CLIA Certified</div>
-        <div class="cert-body">Clinical Lab Improvement</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-recycle"></i></div>
-        <div class="cert-name">ISO 14001</div>
-        <div class="cert-body">Environmental Management</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-icon"><i class="bi bi-people-fill"></i></div>
-        <div class="cert-name">IRB Compliant</div>
-        <div class="cert-body">Ethical Human Research Board</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     9. CTA BANNER
-══════════════════════════════════════════════ -->
-<section class="cta-banner">
-  <div class="container position-relative" style="z-index:2;">
+  <div class="container inv-hero-content py-5" style="padding-bottom: 4rem!important;">
     <div class="row align-items-center">
-      <div class="col-lg-7 reveal">
-        <p class="cta-label">Partner With Us</p>
-        <h2 class="cta-heading">
-          Ready to <em>elevate</em> your<br/>biopharmaceutical supply chain?
-        </h2>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="#" class="btn-cta-primary">Request a Consultation</a>
-          <a href="#" class="btn-cta-outline">View Our Products <i class="bi bi-arrow-right ms-2"></i></a>
+      <div class="col-lg-7">
+        <div class="hero-eyebrow">Investor Relations</div>
+        <h1 class="hero-headline">
+          Pioneering<br><em>Bio‑Innovation</em><br>for Tomorrow
+        </h1>
+        <p class="hero-sub">
+          American BioSources Inc. develops breakthrough biopharmaceutical therapies that address unmet medical needs while delivering sustainable long-term value to our shareholders.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#reports" class="btn-gold">Annual Reports &amp; Filings</a>
+          <a href="#contact" class="btn-outline-gold">Contact IR Team</a>
         </div>
       </div>
-      <div class="col-lg-4 offset-lg-1 d-none d-lg-block reveal reveal-delay-2">
-        <!-- Abstract molecule decoration -->
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.2;animation:rotateSlow 20s linear infinite;">
-          <circle cx="100" cy="100" r="80" stroke="white" stroke-width="1.5" stroke-dasharray="8 6"/>
-          <circle cx="100" cy="100" r="50" stroke="rgba(14,165,233,0.8)" stroke-width="1"/>
-          <circle cx="100" cy="20" r="10" fill="rgba(255,255,255,0.5)"/>
-          <circle cx="170" cy="140" r="8" fill="rgba(14,165,233,0.6)"/>
-          <circle cx="30" cy="140" r="8" fill="rgba(220,38,38,0.6)"/>
-          <line x1="100" y1="20" x2="170" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-          <line x1="170" y1="140" x2="30" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-          <line x1="30" y1="140" x2="100" y2="20" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-        </svg>
+      <div class="col-lg-5 d-none d-lg-block text-end">
+        <!-- Decorative stock visual -->
+        <div style="position:relative; width:100%; padding-top:65%;">
+          <svg viewBox="0 0 460 300" style="position:absolute;inset:0;width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c9a84c" stop-opacity=".35"/>
+                <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid lines -->
+            <line x1="0" y1="60"  x2="460" y2="60"  stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <line x1="0" y1="120" x2="460" y2="120" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <line x1="0" y1="180" x2="460" y2="180" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <line x1="0" y1="240" x2="460" y2="240" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <!-- Fill area -->
+            <path d="M20,240 L60,210 L100,220 L140,180 L180,160 L220,140 L260,110 L300,90 L340,70 L380,55 L420,40 L440,35 L440,260 L20,260 Z" fill="url(#lineGrad)"/>
+            <!-- Line -->
+            <path d="M20,240 L60,210 L100,220 L140,180 L180,160 L220,140 L260,110 L300,90 L340,70 L380,55 L420,40 L440,35" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2.5s" fill="freeze" begin="0.3s"/>
+              <animate attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="2.5s" fill="freeze" begin="0.3s"/>
+            </path>
+            <!-- Dot at end -->
+            <circle cx="440" cy="35" r="5" fill="#c9a84c" opacity="0">
+              <animate attributeName="opacity" from="0" to="1" dur=".3s" fill="freeze" begin="2.5s"/>
+            </circle>
+            <circle cx="440" cy="35" r="10" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0">
+              <animate attributeName="opacity" from="0" to="0.5" dur=".3s" fill="freeze" begin="2.5s"/>
+              <animate attributeName="r" from="5" to="18" dur="1.5s" fill="freeze" begin="2.5s"/>
+              <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" fill="freeze" begin="2.5s"/>
+            </circle>
+            <!-- Year labels -->
+            <text x="20" y="278" fill="rgba(255,255,255,.25)" font-size="10" font-family="DM Mono,monospace">2020</text>
+            <text x="140" y="278" fill="rgba(255,255,255,.25)" font-size="10" font-family="DM Mono,monospace">2021</text>
+            <text x="260" y="278" fill="rgba(255,255,255,.25)" font-size="10" font-family="DM Mono,monospace">2022</text>
+            <text x="380" y="278" fill="rgba(255,255,255,.25)" font-size="10" font-family="DM Mono,monospace">2024</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker -->
+  <div class="stock-ticker">
+    <div class="ticker-track" id="tickerTrack">
+      <!-- Items duplicated in JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     STATS BAND
+════════════════════════════════════════════════════════════════ -->
+<section class="stats-band">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3 fade-up">
+        <div class="stat-card">
+          <div class="stat-number"><span class="counter" data-target="2.4">0</span><span class="unit">B+</span></div>
+          <div class="stat-label">Market Capitalization</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up delay-1">
+        <div class="stat-card">
+          <div class="stat-number"><span class="counter" data-target="18">0</span><span class="unit">+</span></div>
+          <div class="stat-label">Pipeline Candidates</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up delay-2">
+        <div class="stat-card">
+          <div class="stat-number"><span class="counter" data-target="340">0</span><span class="unit">M+</span></div>
+          <div class="stat-label">R&amp;D Investment (FY2024)</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up delay-3">
+        <div class="stat-card">
+          <div class="stat-number"><span class="counter" data-target="62">0</span><span class="unit">%</span></div>
+          <div class="stat-label">YoY Revenue Growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     INVESTMENT THESIS
+════════════════════════════════════════════════════════════════ -->
+<section class="thesis-section" id="thesis">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6 fade-up">
+        <div class="section-tag">Why Invest</div>
+        <h2 class="section-title">The <strong>Investment Thesis</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">
+          American BioSources stands at the intersection of cutting-edge science and commercial execution — backed by a proven leadership team and a diversified portfolio across oncology, rare diseases, and immunology.
+        </p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 fade-up delay-1">
+        <div class="thesis-pillar h-100">
+          <div class="pillar-icon"><i class="bi bi-activity"></i></div>
+          <div class="pillar-title">First-in-Class Pipeline</div>
+          <p class="pillar-body">Proprietary molecular scaffolds target high-value indications with limited competition, offering multiple shots on goal across 18+ active programs from discovery through Phase III.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-2">
+        <div class="thesis-pillar h-100">
+          <div class="pillar-icon"><i class="bi bi-shield-check"></i></div>
+          <div class="pillar-title">Deep IP Moat</div>
+          <p class="pillar-body">Over 200 granted patents and a robust prosecution strategy ensure 12–15 year exclusivity windows on our core programs, protecting long-term revenue streams.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-3">
+        <div class="thesis-pillar h-100">
+          <div class="pillar-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <div class="pillar-title">Accelerating Revenue</div>
+          <p class="pillar-body">Two commercial-stage products generating &gt;$900M in annual net revenue, with CAGR guidance of 55–65% through 2027 driven by label expansions and new launches.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-1">
+        <div class="thesis-pillar h-100">
+          <div class="pillar-icon"><i class="bi bi-globe-americas"></i></div>
+          <div class="pillar-title">Global Commercial Reach</div>
+          <p class="pillar-body">Commercial partnerships spanning 40+ countries, with a fully-owned US sales force of 1,200 representatives and co-promotion agreements across Europe and Asia-Pacific.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-2">
+        <div class="thesis-pillar h-100">
+          <div class="pillar-icon"><i class="bi bi-bank"></i></div>
+          <div class="pillar-title">Fortress Balance Sheet</div>
+          <p class="pillar-body">$1.8B in cash and equivalents, zero debt, and disciplined capital allocation policy — providing the financial flexibility to fund organic growth and strategic acquisitions.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-3">
+        <div class="thesis-pillar h-100">
+          <div class="pillar-icon"><i class="bi bi-person-badge"></i></div>
+          <div class="pillar-title">Experienced Leadership</div>
+          <p class="pillar-body">Management team with combined 150+ years in biopharma, responsible for 7 prior FDA approvals and more than $12B in value creation across prior companies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FINANCIAL HIGHLIGHTS
+════════════════════════════════════════════════════════════════ -->
+<section class="financials-section" id="financials">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="row mb-5">
+      <div class="col-lg-6 fade-up">
+        <div class="section-tag">Financial Performance</div>
+        <h2 class="section-title">Financial <strong>Highlights</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">A track record of consistent growth, disciplined capital deployment, and industry-leading returns on R&amp;D investment.</p>
+      </div>
+    </div>
+    <div class="row g-4 mb-5">
+      <div class="col-6 col-md-3 fade-up delay-1">
+        <div class="fin-card">
+          <div class="fin-card-label">Net Revenue (FY24)</div>
+          <div class="fin-card-value">$942M</div>
+          <div class="fin-card-change pos"><i class="bi bi-arrow-up-short"></i> +62%</div>
+          <div class="mini-chart">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:22%"></div>
+              <div class="chart-bar" style="height:38%"></div>
+              <div class="chart-bar" style="height:52%"></div>
+              <div class="chart-bar" style="height:68%"></div>
+              <div class="chart-bar active" style="height:100%"></div>
+            </div>
+            <div class="chart-years">
+              <span class="chart-year">20</span>
+              <span class="chart-year">21</span>
+              <span class="chart-year">22</span>
+              <span class="chart-year">23</span>
+              <span class="chart-year">24</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up delay-2">
+        <div class="fin-card">
+          <div class="fin-card-label">Gross Margin</div>
+          <div class="fin-card-value">81.4%</div>
+          <div class="fin-card-change pos"><i class="bi bi-arrow-up-short"></i> +3.2pp</div>
+          <div class="mini-chart">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:65%"></div>
+              <div class="chart-bar" style="height:70%"></div>
+              <div class="chart-bar" style="height:74%"></div>
+              <div class="chart-bar" style="height:78%"></div>
+              <div class="chart-bar active" style="height:100%"></div>
+            </div>
+            <div class="chart-years">
+              <span class="chart-year">20</span>
+              <span class="chart-year">21</span>
+              <span class="chart-year">22</span>
+              <span class="chart-year">23</span>
+              <span class="chart-year">24</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up delay-3">
+        <div class="fin-card">
+          <div class="fin-card-label">R&amp;D Spend</div>
+          <div class="fin-card-value">$340M</div>
+          <div class="fin-card-change pos"><i class="bi bi-arrow-up-short"></i> +28%</div>
+          <div class="mini-chart">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:35%"></div>
+              <div class="chart-bar" style="height:48%"></div>
+              <div class="chart-bar" style="height:63%"></div>
+              <div class="chart-bar" style="height:78%"></div>
+              <div class="chart-bar active" style="height:100%"></div>
+            </div>
+            <div class="chart-years">
+              <span class="chart-year">20</span>
+              <span class="chart-year">21</span>
+              <span class="chart-year">22</span>
+              <span class="chart-year">23</span>
+              <span class="chart-year">24</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up delay-4">
+        <div class="fin-card">
+          <div class="fin-card-label">Cash Position</div>
+          <div class="fin-card-value">$1.8B</div>
+          <div class="fin-card-change pos"><i class="bi bi-arrow-up-short"></i> +$420M</div>
+          <div class="mini-chart">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:30%"></div>
+              <div class="chart-bar" style="height:42%"></div>
+              <div class="chart-bar" style="height:58%"></div>
+              <div class="chart-bar" style="height:72%"></div>
+              <div class="chart-bar active" style="height:100%"></div>
+            </div>
+            <div class="chart-years">
+              <span class="chart-year">20</span>
+              <span class="chart-year">21</span>
+              <span class="chart-year">22</span>
+              <span class="chart-year">23</span>
+              <span class="chart-year">24</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guidance strip -->
+    <div class="row fade-up" style="border:1px solid rgba(255,255,255,.1); border-radius:4px; padding:1.5rem 2rem; background:rgba(255,255,255,.04);">
+      <div class="col-md-2 d-flex align-items-center mb-3 mb-md-0">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;">FY25 Guidance</div>
+          <div style="color:rgba(255,255,255,.4);font-size:.78rem;">Issued Feb 2025</div>
+        </div>
+      </div>
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <div style="color:rgba(255,255,255,.45);font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;">Revenue</div>
+        <div style="color:#fff;font-family:var(--font-heading);font-size:1.4rem;font-weight:500;">$1.4B–$1.5B</div>
+      </div>
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <div style="color:rgba(255,255,255,.45);font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;">Non-GAAP EPS</div>
+        <div style="color:#fff;font-family:var(--font-heading);font-size:1.4rem;font-weight:500;">$4.20–$4.60</div>
+      </div>
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <div style="color:rgba(255,255,255,.45);font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;">R&amp;D Spend</div>
+        <div style="color:#fff;font-family:var(--font-heading);font-size:1.4rem;font-weight:500;">$420M–$460M</div>
+      </div>
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <div style="color:rgba(255,255,255,.45);font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;">Gross Margin</div>
+        <div style="color:#fff;font-family:var(--font-heading);font-size:1.4rem;font-weight:500;">82%–84%</div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div style="color:rgba(255,255,255,.45);font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;">EBITDA Margin</div>
+        <div style="color:var(--gold);font-family:var(--font-heading);font-size:1.4rem;font-weight:500;">32%–36%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PIPELINE TIMELINE
+════════════════════════════════════════════════════════════════ -->
+<section class="pipeline-section" id="pipeline">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-5 fade-up">
+        <div class="section-tag">R&amp;D Pipeline</div>
+        <h2 class="section-title">Product <strong>Pipeline</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">18 active programs spanning oncology, rare diseases, and immunology — with 4 pivotal readouts expected in 2025.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-1">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="phase-badge phase-market">Marketed</div>
+            <div class="timeline-name">ABS-101 — Oncology (NSCLC)</div>
+            <div class="timeline-phase">Commercial · Launched 2022</div>
+            <div class="timeline-desc">First-in-class KRAS G12C inhibitor approved in the US & EU. Addressing sNDA submission for first-line combination use. 2024 net revenue: $612M.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="phase-badge phase-market">Marketed</div>
+            <div class="timeline-name">ABS-204 — Rare Disease (HAE)</div>
+            <div class="timeline-phase">Commercial · Launched 2023</div>
+            <div class="timeline-desc">Subcutaneous prophylactic therapy for hereditary angioedema. 2024 net revenue: $330M. Pediatric sNDA submission Q3 2025.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="phase-badge phase-3">Phase III</div>
+            <div class="timeline-name">ABS-317 — Immunology (RA)</div>
+            <div class="timeline-phase">TOPAZ-3 Trial · Data Readout Q3 2025</div>
+            <div class="timeline-desc">Selective JAK1/TYK2 dual inhibitor for moderate-to-severe rheumatoid arthritis. 1,400-patient pivotal trial; primary endpoint ACR50 at week 24.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="phase-badge phase-3">Phase III</div>
+            <div class="timeline-name">ABS-422 — Oncology (HCC)</div>
+            <div class="timeline-phase">SUMMIT Trial · Data Readout Q4 2025</div>
+            <div class="timeline-desc">Next-generation anti-PD-L1/VEGF bispecific antibody for hepatocellular carcinoma. Breakthrough Therapy Designation granted.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="phase-badge phase-2">Phase II</div>
+            <div class="timeline-name">ABS-508 — Rare Disease (SMA)</div>
+            <div class="timeline-phase">SPINAL-1 Trial · Mid-2026 Readout</div>
+            <div class="timeline-desc">RNA-targeted therapy for spinal muscular atrophy. Orphan Drug and Fast Track designations; monthly SC dosing differentiating from current SOC.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="phase-badge phase-1">Phase I</div>
+            <div class="timeline-name">ABS-629 — Oncology (AML)</div>
+            <div class="timeline-phase">FIH Dose Escalation · Ongoing</div>
+            <div class="timeline-desc">Novel menin inhibitor for acute myeloid leukemia with KMT2A rearrangement. Initial clinical data anticipated H2 2025.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LEADERSHIP
+════════════════════════════════════════════════════════════════ -->
+<section class="leadership-section" id="leadership">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-5 fade-up">
+        <div class="section-tag">Management Team</div>
+        <h2 class="section-title">Leadership &amp; <strong>Governance</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">Experienced executives with a proven track record of building and commercializing transformative therapies.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 fade-up delay-1">
+        <div class="leader-card">
+          <div class="leader-avatar">JM</div>
+          <div class="leader-name">Jonathan M. Hartwell</div>
+          <div class="leader-role">Chief Executive Officer</div>
+          <div class="leader-bio">30+ years in biopharma leadership. Previously CEO at Vertex Therapeutics and EVP at Gilead Sciences. Led 3 FDA approvals and $8B+ in M&amp;A transactions.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-2">
+        <div class="leader-card">
+          <div class="leader-avatar">SR</div>
+          <div class="leader-name">Sarah K. Reinholt, PhD</div>
+          <div class="leader-role">Chief Scientific Officer</div>
+          <div class="leader-bio">Pioneering structural biologist specializing in targeted protein degradation. Author of 120+ peer-reviewed publications; inventor on 80+ granted patents.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-3">
+        <div class="leader-card">
+          <div class="leader-avatar">DC</div>
+          <div class="leader-name">David A. Chen, CPA</div>
+          <div class="leader-role">Chief Financial Officer</div>
+          <div class="leader-bio">Former Goldman Sachs Managing Director, Healthcare Investment Banking. Structured $15B+ in equity and debt financings across 20+ biopharma companies.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-1">
+        <div class="leader-card">
+          <div class="leader-avatar">LP</div>
+          <div class="leader-name">Linda P. Vasquez, MD</div>
+          <div class="leader-role">Chief Medical Officer</div>
+          <div class="leader-bio">Oncologist and clinical development executive with 4 prior NDA submissions. Leads a global clinical organization spanning 35 countries and 500+ active sites.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-2">
+        <div class="leader-card">
+          <div class="leader-avatar">MO</div>
+          <div class="leader-name">Michael J. O'Brien</div>
+          <div class="leader-role">Chief Commercial Officer</div>
+          <div class="leader-bio">20+ years in specialty and rare disease commercialization. Drove 3 successful product launches generating >$500M peak annual revenues at prior roles.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up delay-3">
+        <div class="leader-card">
+          <div class="leader-avatar">AT</div>
+          <div class="leader-name">Ananya T. Krishnan, JD</div>
+          <div class="leader-role">General Counsel &amp; Corp. Secretary</div>
+          <div class="leader-bio">Expert in pharmaceutical regulatory law, M&amp;A, and corporate governance. Previously partner at Skadden Arps; member of ABI Board of Directors.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SEC FILINGS / REPORTS
+════════════════════════════════════════════════════════════════ -->
+<section class="reports-section" id="reports">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-5 fade-up">
+        <div class="section-tag">SEC Filings &amp; Disclosures</div>
+        <h2 class="section-title">Reports &amp; <strong>Filings</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">Access our complete library of annual reports, earnings releases, SEC filings, and investor presentations.</p>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="report-row">
+        <div>
+          <div class="report-title">Annual Report — Form 10-K (FY2024)</div>
+          <div class="report-meta">Filed: February 28, 2025 &nbsp;·&nbsp; 148 pages</div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <span class="report-type">10-K</span>
+          <a href="#" class="btn-download"><i class="bi bi-download me-1"></i>Download PDF</a>
+        </div>
+      </div>
+      <div class="report-row">
+        <div>
+          <div class="report-title">Q4 2024 Earnings Release &amp; Presentation</div>
+          <div class="report-meta">Released: February 12, 2025 &nbsp;·&nbsp; Webcast available</div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <span class="report-type">Earnings</span>
+          <a href="#" class="btn-download"><i class="bi bi-download me-1"></i>Download PDF</a>
+        </div>
+      </div>
+      <div class="report-row">
+        <div>
+          <div class="report-title">Q3 2024 Form 10-Q</div>
+          <div class="report-meta">Filed: November 7, 2024 &nbsp;·&nbsp; 89 pages</div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <span class="report-type">10-Q</span>
+          <a href="#" class="btn-download"><i class="bi bi-download me-1"></i>Download PDF</a>
+        </div>
+      </div>
+      <div class="report-row">
+        <div>
+          <div class="report-title">2024 ESG &amp; Corporate Responsibility Report</div>
+          <div class="report-meta">Published: March 15, 2025 &nbsp;·&nbsp; 72 pages</div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <span class="report-type">ESG</span>
+          <a href="#" class="btn-download"><i class="bi bi-download me-1"></i>Download PDF</a>
+        </div>
+      </div>
+      <div class="report-row">
+        <div>
+          <div class="report-title">2025 J.P. Morgan Healthcare Conference Presentation</div>
+          <div class="report-meta">Presented: January 13, 2025 &nbsp;·&nbsp; 42 slides</div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <span class="report-type">Presentation</span>
+          <a href="#" class="btn-download"><i class="bi bi-download me-1"></i>Download PDF</a>
+        </div>
+      </div>
+      <div class="report-row">
+        <div>
+          <div class="report-title">Proxy Statement — 2025 Annual Meeting</div>
+          <div class="report-meta">Filed: April 5, 2025 &nbsp;·&nbsp; Meeting: May 22, 2025</div>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <span class="report-type">DEF 14A</span>
+          <a href="#" class="btn-download"><i class="bi bi-download me-1"></i>Download PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4 fade-up">
+      <a href="#" class="btn-gold">View All SEC Filings <i class="bi bi-arrow-right ms-1"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ESG
+════════════════════════════════════════════════════════════════ -->
+<section class="esg-section" id="esg">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-5 fade-up">
+        <div class="section-tag">ESG &amp; Responsibility</div>
+        <h2 class="section-title">Sustainable <strong>Value Creation</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">We measure success not only in financial returns, but in our enduring impact on patients, communities, and the planet.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 fade-up delay-1">
+        <div class="esg-card env h-100">
+          <div class="esg-icon"><i class="bi bi-tree"></i></div>
+          <div class="esg-title">Environmental</div>
+          <p class="esg-body">Committed to net-zero greenhouse gas emissions by 2035 across our manufacturing and research operations.</p>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> 48% reduction in Scope 1 &amp; 2 emissions since 2019</div>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> 100% renewable electricity at all US facilities</div>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> Zero waste-to-landfill certification at 3 sites</div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up delay-2">
+        <div class="esg-card soc h-100">
+          <div class="esg-icon"><i class="bi bi-people"></i></div>
+          <div class="esg-title">Social</div>
+          <p class="esg-body">Advancing health equity through access programs, patient advocacy, and a diverse, inclusive workforce.</p>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> 45,000+ patients reached through access programs</div>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> 46% women in leadership positions</div>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> $85M invested in community health initiatives</div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up delay-3">
+        <div class="esg-card gov h-100">
+          <div class="esg-icon"><i class="bi bi-award"></i></div>
+          <div class="esg-title">Governance</div>
+          <p class="esg-body">Independent, diverse board with robust oversight structures and transparent disclosure practices.</p>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> 80% independent directors on Board of Directors</div>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> Separate Chair and CEO roles</div>
+          <div class="esg-metric"><i class="bi bi-check-circle-fill"></i> ISS QualityScore: 1 (top decile)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTACT IR
+════════════════════════════════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="row mb-5">
+      <div class="col-lg-6 fade-up">
+        <div class="section-tag">Investor Contact</div>
+        <h2 class="section-title">Connect with Our <strong>IR Team</strong></h2>
+        <div class="divider-gold"></div>
+        <p class="section-lead">Our Investor Relations team is available to address inquiries from analysts, institutional investors, and shareholders.</p>
+      </div>
+    </div>
+    <div class="row g-4 mb-5">
+      <div class="col-md-4 fade-up delay-1">
+        <div class="ir-contact-card">
+          <div class="ir-contact-label">IR Contact</div>
+          <div class="ir-contact-value">Robert E. Patterson<br><small style="color:rgba(255,255,255,.5);font-weight:300;">VP, Investor Relations</small></div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up delay-2">
+        <div class="ir-contact-card">
+          <div class="ir-contact-label">Email</div>
+          <div class="ir-contact-value"><a href="mailto:ir@americanbiosources.com">ir@americanbiosources.com</a></div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up delay-3">
+        <div class="ir-contact-card">
+          <div class="ir-contact-label">Phone</div>
+          <div class="ir-contact-value"><a href="tel:+12025550190">+1 (202) 555-0190</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscribe -->
+    <div class="row fade-up" style="border:1px solid rgba(255,255,255,.1);padding:2rem 2.5rem;border-radius:4px;background:rgba(255,255,255,.04);">
+      <div class="col-md-5 d-flex align-items-center mb-3 mb-md-0">
+        <div>
+          <div style="font-family:var(--font-heading);font-size:1.4rem;font-weight:500;color:#fff;margin-bottom:.4rem;">Stay Informed</div>
+          <div style="font-size:.875rem;color:rgba(255,255,255,.5);">Subscribe to press releases, earnings alerts, and IR updates.</div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="subscribe-form">
+          <input class="subscribe-input" type="email" placeholder="Enter your email address" id="subEmail"/>
+          <button class="btn-gold" onclick="handleSubscribe()">Subscribe</button>
+        </div>
+        <div id="subMsg" style="margin-top:.6rem;font-size:.8rem;color:var(--gold);display:none;">
+          <i class="bi bi-check-circle me-1"></i>You're subscribed. Thank you!
+        </div>
+      </div>
+    </div>
+
+    <!-- Events strip -->
+    <div class="row mt-5 g-3" id="events">
+      <div class="col-12 mb-2">
+        <div style="font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">Upcoming Events</div>
+      </div>
+      <div class="col-md-4 fade-up delay-1">
+        <div style="border:1px solid rgba(255,255,255,.1);padding:1.25rem 1.5rem;border-radius:4px;display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,.03);">
+          <div style="min-width:50px;text-align:center;background:var(--gold);color:var(--navy-deep);padding:.4rem;border-radius:2px;">
+            <div style="font-family:var(--font-mono);font-size:.65rem;">MAY</div>
+            <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;line-height:1;">22</div>
+          </div>
+          <div>
+            <div style="color:#fff;font-weight:500;font-size:.9rem;">Annual Shareholder Meeting</div>
+            <div style="color:rgba(255,255,255,.45);font-size:.78rem;margin-top:.15rem;">Virtual · 10:00 AM ET</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up delay-2">
+        <div style="border:1px solid rgba(255,255,255,.1);padding:1.25rem 1.5rem;border-radius:4px;display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,.03);">
+          <div style="min-width:50px;text-align:center;background:rgba(201,168,76,.15);border:1px solid var(--gold);color:var(--gold);padding:.4rem;border-radius:2px;">
+            <div style="font-family:var(--font-mono);font-size:.65rem;">AUG</div>
+            <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;line-height:1;">07</div>
+          </div>
+          <div>
+            <div style="color:#fff;font-weight:500;font-size:.9rem;">Q2 2025 Earnings Call</div>
+            <div style="color:rgba(255,255,255,.45);font-size:.78rem;margin-top:.15rem;">Webcast · 8:00 AM ET</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 fade-up delay-3">
+        <div style="border:1px solid rgba(255,255,255,.1);padding:1.25rem 1.5rem;border-radius:4px;display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,.03);">
+          <div style="min-width:50px;text-align:center;background:rgba(201,168,76,.15);border:1px solid var(--gold);color:var(--gold);padding:.4rem;border-radius:2px;">
+            <div style="font-family:var(--font-mono);font-size:.65rem;">SEP</div>
+            <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;line-height:1;">11</div>
+          </div>
+          <div>
+            <div style="color:#fff;font-weight:500;font-size:.9rem;">Morgan Stanley Global HC Conference</div>
+            <div style="color:rgba(255,255,255,.45);font-size:.78rem;margin-top:.15rem;">New York, NY</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal disclaimer -->
+    <div class="row mt-5 fade-up">
+      <div class="col-12">
+        <p style="font-size:.72rem;color:rgba(255,255,255,.25);line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;">
+          <strong style="color:rgba(255,255,255,.4);">Forward-Looking Statements:</strong> This page contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. These statements involve known and unknown risks and uncertainties that may cause actual results to differ materially. American BioSources Inc. undertakes no obligation to update these forward-looking statements. This page is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  /* ─── Scroll reveal ─── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => revealObserver.observe(el));
+/* ─── TICKER ────────────────────────────────────────────────── */
+const tickerData = [
+  { sym: 'ABSI', price: '84.32', change: '+2.14', pct: '+2.60%', dir: 'up' },
+  { sym: 'NBI', price: '4,821', change: '+38.5', pct: '+0.81%', dir: 'up' },
+  { sym: 'XBI', price: '98.74', change: '-0.42', pct: '-0.42%', dir: 'down' },
+  { sym: 'IBB', price: '156.90', change: '+1.23', pct: '+0.79%', dir: 'up' },
+  { sym: 'SPX', price: '5,412', change: '+18.6', pct: '+0.34%', dir: 'up' },
+  { sym: 'ABSI·Vol', price: '4.2M', change: '+High', pct: 'shares', dir: 'up' },
+];
+function buildTicker() {
+  const track = document.getElementById('tickerTrack');
+  const items = [...tickerData, ...tickerData].map(d => `
+    <span class="ticker-item">
+      <span class="sym">${d.sym}</span>
+      <span style="color:#fff">${d.price}</span>
+      <span class="${d.dir}">${d.change} (${d.pct})</span>
+    </span>`).join('');
+  track.innerHTML = items;
+}
+buildTicker();
 
-  /* ─── Timeline items staggered reveal ─── */
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  const tlObserver = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 120);
-        tlObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  timelineItems.forEach(el => tlObserver.observe(el));
-
-  /* ─── Animated counters ─── */
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
+/* ─── COUNTER ANIMATION ─────────────────────────────────────── */
+function animateCounters() {
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = parseFloat(el.dataset.target);
+    const isDecimal = target % 1 !== 0;
     const duration = 1800;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = Math.floor(current);
-    }, 16);
-  }
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = eased * target;
+      el.textContent = isDecimal ? value.toFixed(1) : Math.round(value);
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
 
-  const counterEls = document.querySelectorAll('.count');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        animateCounter(e.target);
-        counterObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  counterEls.forEach(el => counterObserver.observe(el));
+/* ─── INTERSECTION OBSERVER ─────────────────────────────────── */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      if (entry.target.closest('.stats-band')) animateCounters();
+    }
+  });
+}, { threshold: 0.15 });
 
-  /* ─── Parallax on hero image ─── */
-  const heroRight = document.querySelector('.hero-right img');
-  if (heroRight) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      heroRight.style.transform = `scale(1) translateY(${scrolled * 0.2}px)`;
-    }, { passive: true });
+document.querySelectorAll('.fade-up, .timeline-item').forEach(el => io.observe(el));
+
+/* ─── SUBSCRIBE ─────────────────────────────────────────────── */
+function handleSubscribe() {
+  const email = document.getElementById('subEmail').value;
+  const msg   = document.getElementById('subMsg');
+  if (!email || !email.includes('@')) {
+    document.getElementById('subEmail').style.borderColor = '#f87171';
+    return;
   }
+  msg.style.display = 'block';
+  document.getElementById('subEmail').value = '';
+  document.getElementById('subEmail').style.borderColor = '';
+}
+
+/* ─── SMOOTH NAV OFFSET (if existing navbar is ~125px tall) ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = 130;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
 </script>
 </body>
 </html>
